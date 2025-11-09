@@ -145,7 +145,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             position: relative;
             background: var(--color-bg-primary);
             padding: 160px 0 100px;
@@ -153,9 +152,14 @@
 
         .hero-content {
             position: relative;
+            width: 100%;
         }
 
-        .hero h1 {
+        .hero-text {
+            text-align: center;
+        }
+
+        .hero-text h1 {
             font-size: clamp(44px, 7vw, 72px);
             font-weight: 800;
             line-height: 1.15;
@@ -164,13 +168,10 @@
             color: var(--color-text-primary);
         }
 
-        .hero p {
+        .hero-text p {
             font-size: clamp(18px, 2.5vw, 21px);
             color: var(--color-text-secondary);
             margin-bottom: 40px;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
             font-weight: 400;
             line-height: 1.6;
         }
@@ -181,6 +182,132 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+        }
+
+        .hero-video {
+            display: block;
+            margin-top: 48px;
+        }
+
+        /* Mobile Device Frame */
+        .device-frame {
+            position: relative;
+            max-width: 280px;
+            margin: 0 auto;
+            background: #1e293b;
+            border-radius: 36px;
+            padding: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        }
+
+        .device-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 20px;
+            background: #1e293b;
+            border-radius: 0 0 14px 14px;
+            z-index: 2;
+        }
+
+        .device-screen {
+            position: relative;
+            background: #000;
+            border-radius: 26px;
+            overflow: hidden;
+            min-height: 400px;
+            max-height: 500px;
+            height: auto;
+        }
+
+        .device-screen video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Desktop grid layout for hero */
+        @media (min-width: 1024px) {
+            .hero-content {
+                display: grid;
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: 80px;
+                align-items: center;
+            }
+
+            .hero-text {
+                text-align: left;
+            }
+
+            .hero-text p {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .hero-cta {
+                justify-content: flex-start;
+            }
+
+            .hero-video {
+                display: block;
+                margin-top: 0;
+            }
+
+            .device-frame {
+                max-width: 300px;
+            }
+
+            .device-screen {
+                min-height: 450px;
+                max-height: 550px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .hero-content {
+                gap: 100px;
+            }
+
+            .device-frame {
+                max-width: 320px;
+            }
+
+            .device-screen {
+                min-height: 480px;
+                max-height: 580px;
+            }
+        }
+
+        /* Tablet layout */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .hero-video {
+                display: block;
+            }
+
+            .device-frame {
+                max-width: 280px;
+            }
+
+            .device-screen {
+                min-height: 420px;
+                max-height: 520px;
+            }
+        }
+
+        /* Small mobile */
+        @media (max-width: 480px) {
+            .device-frame {
+                max-width: 240px;
+            }
+
+            .device-screen {
+                min-height: 360px;
+                max-height: 460px;
+            }
         }
 
         .cta-primary,
@@ -581,7 +708,7 @@
                 padding: 100px 0 50px;
             }
 
-            .hero h1 br {
+            .hero-text h1 br {
                 display: none;
             }
 
@@ -665,13 +792,26 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <div class="beta-status">Currently in private beta with select coaching institutes</div>
-                    <h1>Modern LMS built for <br>coaching institutes</h1>
-                    <p>Streamline your coaching operations with AI-powered material management, smart chat, and
-                        automated quiz creation</p>
-                    <div class="hero-cta">
-                        <a href="#waitlist" class="cta-primary">Request Beta Access</a>
-                        <a href="#features" class="cta-secondary">Learn More</a>
+                    <div class="hero-text">
+                        <div class="beta-status">Currently in private beta with select coaching institutes</div>
+                        <h1>Modern LMS built for <br>coaching institutes</h1>
+                        <p>Streamline your coaching operations with AI-powered material management, smart chat, and
+                            automated quiz creation</p>
+                        <div class="hero-cta">
+                            <a href="#waitlist" class="cta-primary">Request Beta Access</a>
+                            <a href="#features" class="cta-secondary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="hero-video">
+                        <div class="device-frame">
+                            <div class="device-notch"></div>
+                            <div class="device-screen">
+                                <video autoplay muted loop playsinline>
+                                    <source src="aqlia.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -758,11 +898,11 @@
                 <h2>Ready to transform your coaching institute?</h2>
                 <p class="cta-description">Join our beta program and be among the first to experience the future of
                     coaching education</p>
-                <a href="mailto:contact@aqlia.org hai?subject=Aqlia Beta Access Request&body=Hi Aqlia Team,%0D%0A%0D%0AI'm interested in joining the beta program for Aqlia.%0D%0A%0D%0AInstitute Name: %0D%0AYour Name: %0D%0APhone: %0D%0A%0D%0AThank you!"
+                <a href="mailto:contact@aqlia.org?subject=Aqlia Beta Access Request&body=Hi Aqlia Team,%0D%0A%0D%0AI'm interested in joining the beta program for Aqlia.%0D%0A%0D%0AInstitute Name: %0D%0AYour Name: %0D%0APhone: %0D%0A%0D%0AThank you!"
                     class="cta-primary">Request Beta Access</a>
                 <div class="cta-contact-info">
                     <div class="cta-contact-info-container">
-                        <p>Or email us directly at <a href="mailto:contact@aqlia.org hai">contact@aqlia.org hai</a>
+                        <p>Or email us directly at <a href="mailto:contact@aqlia.org">contact@aqlia.org</a>
                         </p>
                         <p>We typically respond within 24 hours</p>
                     </div>
