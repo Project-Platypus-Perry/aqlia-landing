@@ -60,7 +60,7 @@ You can easily customize:
 - **Logo/Name**: Change "Aqlia" in the header
 - **Colors**: Edit the gradient colors in CSS (search for `#667eea` and `#764ba2`)
 - **Content**: Update text in HTML
-- **Email**: Update `arishalam121@gmail.com` with your email
+- **Email**: Update `aarish@aqlia.org` with your email
 - **Icons**: Change emoji icons in feature cards
 - **Animation speed**: Adjust transition durations in CSS
 

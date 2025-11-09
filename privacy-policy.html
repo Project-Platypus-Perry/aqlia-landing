@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Aqlia - Learn how we collect, use, and protect your data.">
+    <meta name="theme-color" content="#2563eb">
+    <title>Privacy Policy - Aqlia</title>
+    <style>
+        /* Design System Variables */
+        :root {
+            --color-primary: #2563eb;
+            --color-primary-dark: #1d4ed8;
+            --color-primary-light: #3b82f6;
+
+            --color-text-primary: #1e293b;
+            --color-text-secondary: #64748b;
+            --color-text-tertiary: #94a3b8;
+
+            --color-bg-primary: #ffffff;
+            --color-bg-secondary: #f8fafc;
+
+            --color-border: #e2e8f0;
+
+            --radius-md: 12px;
+            --radius-lg: 16px;
+
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+            --transition: 200ms ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background: var(--color-bg-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 48px;
+            }
+        }
+
+        /* Header */
+        header {
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            line-height: 0;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+            display: block;
+        }
+
+        /* Legal Content */
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 160px 24px 100px;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .legal-header h1 {
+            font-size: clamp(36px, 6vw, 48px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            color: var(--color-text-primary);
+            line-height: 1.2;
+        }
+
+        .legal-header p {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+        }
+
+        .legal-section {
+            margin-bottom: 48px;
+        }
+
+        .legal-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--color-text-primary);
+            line-height: 1.3;
+        }
+
+        .legal-section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            margin-top: 24px;
+            color: var(--color-text-primary);
+        }
+
+        .legal-section p {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .legal-section ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        .legal-section li {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        .legal-section strong {
+            color: var(--color-text-primary);
+            font-weight: 600;
+        }
+
+        .contact-box {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 48px;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+        }
+
+        .contact-box a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            color: var(--color-primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            background: var(--color-bg-primary);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+        }
+
+        footer p {
+            font-size: 14px;
+            color: var(--color-text-tertiary);
+            font-weight: 400;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo img {
+                height: 75px;
+            }
+
+            .legal-content {
+                padding: 120px 24px 80px;
+            }
+
+            .legal-section h2 {
+                font-size: 22px;
+            }
+        }
+
+        /* Accessibility */
+        *:focus-visible {
+            outline: 3px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <picture>
+                        <source srcset="aqlia-dark.png" media="(prefers-color-scheme: light)">
+                        <img src="aqlia.png" alt="Aqlia">
+                    </picture>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="legal-content">
+            <div class="legal-header">
+                <h1>Privacy Policy</h1>
+                <p>Last updated: November 9, 2025</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>1. Introduction</h2>
+                <p>Welcome to Aqlia. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Learning Management System (LMS) platform designed for coaching institutes.</p>
+                <p>By using Aqlia, you agree to the collection and use of information in accordance with this policy.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>2. Information We Collect</h2>
+
+                <h3>2.1 Personal Information</h3>
+                <p>We collect information that identifies you as an individual, including:</p>
+                <ul>
+                    <li>Name, email address, and contact information</li>
+                    <li>Institute name and administrative details</li>
+                    <li>Student enrollment and batch information</li>
+                    <li>Profile information and preferences</li>
+                    <li>Authentication credentials (securely encrypted)</li>
+                </ul>
+
+                <h3>2.2 Educational Content and Usage Data</h3>
+                <p>To provide our LMS services, we collect:</p>
+                <ul>
+                    <li>Learning materials uploaded by instructors (notes, lectures, DPPs)</li>
+                    <li>Quiz responses and assessment results</li>
+                    <li>Chat interactions with our AI-powered smart chat feature</li>
+                    <li>Attendance and progress tracking data</li>
+                    <li>Platform usage patterns and feature interactions</li>
+                </ul>
+
+                <h3>2.3 Technical Information</h3>
+                <p>We automatically collect technical data including:</p>
+                <ul>
+                    <li>IP address, browser type, and device information</li>
+                    <li>Operating system and application version</li>
+                    <li>Log data and error reports</li>
+                    <li>Cookies and similar tracking technologies</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>3. How We Use Your Information</h2>
+                <p>We use the collected information for the following purposes:</p>
+                <ul>
+                    <li><strong>Service Delivery:</strong> To provide, maintain, and improve our LMS platform</li>
+                    <li><strong>AI Features:</strong> To power our smart chat functionality and automated quiz creation</li>
+                    <li><strong>Material Management:</strong> To organize and distribute educational content</li>
+                    <li><strong>Analytics:</strong> To understand platform usage and enhance user experience</li>
+                    <li><strong>Communication:</strong> To send important updates, notifications, and support messages</li>
+                    <li><strong>Security:</strong> To detect, prevent, and address technical issues and security threats</li>
+                    <li><strong>Compliance:</strong> To comply with legal obligations and enforce our terms</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>4. AI-Powered Features and Data Processing</h2>
+                <p>Aqlia uses artificial intelligence to enhance learning experiences:</p>
+                <ul>
+                    <li><strong>Smart Chat:</strong> Your chat queries and uploaded materials are processed to provide contextual answers. We use this data to improve AI accuracy and relevance.</li>
+                    <li><strong>Quiz Generation:</strong> When creating quizzes, our AI may search the web and process your reference materials to generate relevant questions.</li>
+                    <li><strong>Content Analysis:</strong> We analyze uploaded educational content to enable search, organization, and AI-powered features.</li>
+                </ul>
+                <p>We implement strict data handling practices to ensure your content remains secure during AI processing.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>5. Information Sharing and Disclosure</h2>
+                <p>We do not sell your personal information. We may share your information only in the following circumstances:</p>
+                <ul>
+                    <li><strong>With Your Consent:</strong> When you explicitly authorize us to share information</li>
+                    <li><strong>Service Providers:</strong> With trusted third-party vendors who assist in operating our platform (e.g., cloud hosting, AI services)</li>
+                    <li><strong>Legal Requirements:</strong> When required by law, court order, or government regulation</li>
+                    <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
+                    <li><strong>Safety and Security:</strong> To protect the rights, property, and safety of Aqlia, our users, or the public</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>6. Data Security</h2>
+                <p>We implement industry-standard security measures to protect your information:</p>
+                <ul>
+                    <li>Encryption of data in transit and at rest</li>
+                    <li>Secure authentication and access controls</li>
+                    <li>Regular security audits and vulnerability assessments</li>
+                    <li>Employee training on data protection practices</li>
+                    <li>Incident response and breach notification procedures</li>
+                </ul>
+                <p>However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>7. Data Retention</h2>
+                <p>We retain your personal information for as long as necessary to:</p>
+                <ul>
+                    <li>Provide our services and fulfill the purposes outlined in this policy</li>
+                    <li>Comply with legal, regulatory, or contractual obligations</li>
+                    <li>Resolve disputes and enforce our agreements</li>
+                </ul>
+                <p>When data is no longer needed, we securely delete or anonymize it.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>8. Student Privacy</h2>
+                <p>We are committed to protecting student privacy:</p>
+                <ul>
+                    <li>We collect only the minimum information necessary for educational purposes</li>
+                    <li>Student data is used solely to provide educational services through coaching institutes</li>
+                    <li>We do not use student information for advertising or marketing purposes</li>
+                    <li>Parents and guardians can request access to their child's information through the institute</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>9. Cookies and Tracking Technologies</h2>
+                <p>We use cookies and similar technologies to:</p>
+                <ul>
+                    <li>Maintain your session and keep you logged in</li>
+                    <li>Remember your preferences and settings</li>
+                    <li>Analyze platform usage and performance</li>
+                    <li>Improve user experience and functionality</li>
+                </ul>
+                <p>You can control cookie preferences through your browser settings, but disabling cookies may affect platform functionality.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>10. Your Rights and Choices</h2>
+                <p>Depending on your location, you may have the following rights:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+                    <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+                    <li><strong>Objection:</strong> Object to certain processing of your information</li>
+                    <li><strong>Data Portability:</strong> Request transfer of your data to another service</li>
+                    <li><strong>Withdrawal of Consent:</strong> Withdraw consent where processing is based on consent</li>
+                </ul>
+                <p>To exercise these rights, please contact us using the information provided below.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>11. Beta Program Notice</h2>
+                <p>Aqlia is currently in private beta. During this period:</p>
+                <ul>
+                    <li>Features and functionality may change without notice</li>
+                    <li>We may collect additional feedback and usage data to improve the platform</li>
+                    <li>Beta participants may have access to pre-release features</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>12. Third-Party Services</h2>
+                <p>Our platform may integrate with third-party services (e.g., cloud storage, AI providers). These services have their own privacy policies, and we encourage you to review them. We are not responsible for the privacy practices of third parties.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>13. International Data Transfers</h2>
+                <p>Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place to protect your information in accordance with this Privacy Policy.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>14. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by:</p>
+                <ul>
+                    <li>Posting the updated policy on our platform</li>
+                    <li>Updating the "Last updated" date</li>
+                    <li>Sending email notifications for significant changes</li>
+                </ul>
+                <p>Your continued use of Aqlia after changes become effective constitutes acceptance of the updated policy.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>15. Children's Privacy</h2>
+                <p>Aqlia is designed for use by coaching institutes to provide educational services. While students of various ages may use the platform through their institutes, we do not knowingly collect personal information directly from children under 13 without parental consent through the institute.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms & Conditions</a>
+                </div>
+                <p>&copy; 2025 Aqlia. Built for coaching institutes.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

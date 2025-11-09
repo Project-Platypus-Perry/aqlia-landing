@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms and Conditions for Aqlia - Review the terms of use for our LMS platform.">
+    <meta name="theme-color" content="#2563eb">
+    <title>Terms & Conditions - Aqlia</title>
+    <style>
+        /* Design System Variables */
+        :root {
+            --color-primary: #2563eb;
+            --color-primary-dark: #1d4ed8;
+            --color-primary-light: #3b82f6;
+
+            --color-text-primary: #1e293b;
+            --color-text-secondary: #64748b;
+            --color-text-tertiary: #94a3b8;
+
+            --color-bg-primary: #ffffff;
+            --color-bg-secondary: #f8fafc;
+
+            --color-border: #e2e8f0;
+
+            --radius-md: 12px;
+            --radius-lg: 16px;
+
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+            --transition: 200ms ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background: var(--color-bg-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 48px;
+            }
+        }
+
+        /* Header */
+        header {
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            line-height: 0;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+            display: block;
+        }
+
+        /* Legal Content */
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 160px 24px 100px;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .legal-header h1 {
+            font-size: clamp(36px, 6vw, 48px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            color: var(--color-text-primary);
+            line-height: 1.2;
+        }
+
+        .legal-header p {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+        }
+
+        .legal-section {
+            margin-bottom: 48px;
+        }
+
+        .legal-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--color-text-primary);
+            line-height: 1.3;
+        }
+
+        .legal-section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            margin-top: 24px;
+            color: var(--color-text-primary);
+        }
+
+        .legal-section p {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .legal-section ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        .legal-section li {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        .legal-section strong {
+            color: var(--color-text-primary);
+            font-weight: 600;
+        }
+
+        .contact-box {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 48px;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+        }
+
+        .contact-box a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            color: var(--color-primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            background: var(--color-bg-primary);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+        }
+
+        footer p {
+            font-size: 14px;
+            color: var(--color-text-tertiary);
+            font-weight: 400;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo img {
+                height: 75px;
+            }
+
+            .legal-content {
+                padding: 120px 24px 80px;
+            }
+
+            .legal-section h2 {
+                font-size: 22px;
+            }
+        }
+
+        /* Accessibility */
+        *:focus-visible {
+            outline: 3px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <picture>
+                        <source srcset="aqlia-dark.png" media="(prefers-color-scheme: light)">
+                        <img src="aqlia.png" alt="Aqlia">
+                    </picture>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="legal-content">
+            <div class="legal-header">
+                <h1>Terms & Conditions</h1>
+                <p>Last updated: November 9, 2025</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>1. Agreement to Terms</h2>
+                <p>Welcome to Aqlia. These Terms and Conditions ("Terms") govern your access to and use of the Aqlia learning management system platform, including all features, content, and services (collectively, the "Service").</p>
+                <p>By accessing or using Aqlia, you agree to be bound by these Terms. If you do not agree to these Terms, you may not access or use the Service.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>2. Description of Service</h2>
+                <p>Aqlia is a modern Learning Management System (LMS) designed specifically for coaching institutes. Our platform provides:</p>
+                <ul>
+                    <li>Material management for lectures, notes, and daily practice problems (DPPs)</li>
+                    <li>Batch and classroom management tools</li>
+                    <li>AI-powered smart chat that references uploaded materials</li>
+                    <li>Automated quiz creation using AI technology</li>
+                    <li>Student progress tracking and analytics</li>
+                    <li>Additional features as developed and released</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>3. Beta Program Terms</h2>
+                <p>Aqlia is currently in private beta. By participating in the beta program, you acknowledge that:</p>
+                <ul>
+                    <li>The Service is provided on an "as is" and "as available" basis</li>
+                    <li>Features may be incomplete, contain bugs, or change without notice</li>
+                    <li>Service availability and uptime are not guaranteed during beta</li>
+                    <li>We may request feedback and usage data to improve the platform</li>
+                    <li>Beta access may be revoked at any time at our discretion</li>
+                    <li>Pricing, features, and terms may change before general availability</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>4. User Accounts and Registration</h2>
+                <p>To use Aqlia, coaching institutes must create an account. You agree to:</p>
+                <ul>
+                    <li>Provide accurate, current, and complete information during registration</li>
+                    <li>Maintain and promptly update your account information</li>
+                    <li>Maintain the security and confidentiality of your login credentials</li>
+                    <li>Accept responsibility for all activities that occur under your account</li>
+                    <li>Notify us immediately of any unauthorized access or security breach</li>
+                    <li>Not share your account credentials with unauthorized individuals</li>
+                </ul>
+                <p>We reserve the right to suspend or terminate accounts that violate these Terms.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>5. Acceptable Use Policy</h2>
+                <p>When using Aqlia, you agree not to:</p>
+                <ul>
+                    <li>Violate any applicable laws, regulations, or third-party rights</li>
+                    <li>Upload malicious code, viruses, or harmful content</li>
+                    <li>Attempt to gain unauthorized access to the Service or other users' accounts</li>
+                    <li>Use the Service to distribute spam, harassment, or inappropriate content</li>
+                    <li>Reverse engineer, decompile, or attempt to extract source code</li>
+                    <li>Remove, obscure, or alter any proprietary notices or branding</li>
+                    <li>Use automated systems to access the Service without permission</li>
+                    <li>Interfere with or disrupt the Service or servers</li>
+                    <li>Impersonate others or misrepresent your affiliation</li>
+                    <li>Use the Service for any illegal or unauthorized purpose</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>6. Intellectual Property Rights</h2>
+
+                <h3>6.1 Aqlia's Rights</h3>
+                <p>The Service, including all software, designs, text, graphics, logos, and other content (excluding user-generated content), is owned by Aqlia and protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works without our express written permission.</p>
+
+                <h3>6.2 User Content</h3>
+                <p>You retain ownership of all educational materials, documents, and content you upload to the Service ("User Content"). By uploading User Content, you grant Aqlia a limited, non-exclusive license to:</p>
+                <ul>
+                    <li>Store, process, and display your User Content as necessary to provide the Service</li>
+                    <li>Use your User Content to power AI features (smart chat, quiz generation)</li>
+                    <li>Create backups and ensure data redundancy</li>
+                    <li>Improve our algorithms and service quality (in anonymized form)</li>
+                </ul>
+                <p>You represent and warrant that you have all necessary rights to upload User Content and grant the above license.</p>
+
+                <h3>6.3 Student Work</h3>
+                <p>Student submissions, quiz responses, and other student-generated content remain the property of the respective students and institutes. Aqlia processes this content solely to provide educational services.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>7. AI-Powered Features</h2>
+                <p>Our AI features are designed to enhance learning but have limitations:</p>
+                <ul>
+                    <li><strong>Smart Chat:</strong> AI responses are generated based on uploaded materials and may not always be accurate. Verify important information independently.</li>
+                    <li><strong>Quiz Generation:</strong> AI-generated quizzes should be reviewed by instructors before use to ensure accuracy and appropriateness.</li>
+                    <li><strong>No Medical/Legal Advice:</strong> AI features do not provide professional advice and should not be relied upon for critical decisions.</li>
+                    <li><strong>Continuous Improvement:</strong> We continuously improve AI models, and outputs may vary over time.</li>
+                </ul>
+                <p>You acknowledge that AI technology has inherent limitations and agree not to rely solely on AI-generated content without human oversight.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>8. User Responsibilities</h2>
+                <p>As a user of Aqlia, you are responsible for:</p>
+                <ul>
+                    <li>Ensuring uploaded content does not violate copyright or intellectual property rights</li>
+                    <li>Maintaining appropriate supervision of student activities on the platform</li>
+                    <li>Verifying the accuracy of AI-generated content before using it in educational settings</li>
+                    <li>Complying with applicable education regulations and student data protection laws</li>
+                    <li>Creating regular backups of important content (we maintain backups but are not liable for data loss)</li>
+                    <li>Monitoring user accounts under your institute for compliance with these Terms</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>9. Payment Terms (Future Applicability)</h2>
+                <p>While Aqlia is currently in beta with no charges, upon commercial launch:</p>
+                <ul>
+                    <li>Subscription fees will be communicated clearly before any charges</li>
+                    <li>Beta participants may receive special pricing or grandfathered rates</li>
+                    <li>Payment terms will be provided in an updated agreement</li>
+                    <li>You may cancel your subscription according to the cancellation policy at that time</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>10. Data and Privacy</h2>
+                <p>Your use of the Service is also governed by our Privacy Policy, which is incorporated into these Terms by reference. We collect, use, and protect data as described in the Privacy Policy. You acknowledge that:</p>
+                <ul>
+                    <li>You have read and understood our Privacy Policy</li>
+                    <li>You consent to data collection and processing as described</li>
+                    <li>You are responsible for obtaining necessary consents from students and parents</li>
+                    <li>You will comply with applicable data protection laws (GDPR, COPPA, etc.)</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>11. Service Availability and Modifications</h2>
+                <p>We strive to maintain reliable service but do not guarantee uninterrupted access. We reserve the right to:</p>
+                <ul>
+                    <li>Modify, suspend, or discontinue any feature or the entire Service</li>
+                    <li>Perform scheduled or emergency maintenance</li>
+                    <li>Update features, functionality, and user interfaces</li>
+                    <li>Change these Terms with reasonable notice</li>
+                </ul>
+                <p>We will provide advance notice of significant changes when reasonably possible.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>12. Termination</h2>
+
+                <h3>12.1 Termination by You</h3>
+                <p>You may terminate your account at any time by contacting us. Upon termination, your right to use the Service ceases immediately.</p>
+
+                <h3>12.2 Termination by Aqlia</h3>
+                <p>We may suspend or terminate your access if you:</p>
+                <ul>
+                    <li>Violate these Terms or our Acceptable Use Policy</li>
+                    <li>Fail to pay applicable fees (post-beta launch)</li>
+                    <li>Engage in fraudulent or illegal activity</li>
+                    <li>Pose a security risk to the Service or other users</li>
+                </ul>
+
+                <h3>12.3 Effect of Termination</h3>
+                <p>Upon termination:</p>
+                <ul>
+                    <li>You lose access to your account and User Content</li>
+                    <li>We may delete your data after a reasonable grace period (typically 30 days)</li>
+                    <li>You remain liable for any obligations incurred before termination</li>
+                    <li>Provisions that should survive termination (warranties, indemnification, limitations of liability) remain in effect</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>13. Disclaimers and Warranties</h2>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:</p>
+                <ul>
+                    <li>Warranties of merchantability, fitness for a particular purpose, or non-infringement</li>
+                    <li>Warranties regarding accuracy, reliability, or availability of the Service</li>
+                    <li>Warranties that the Service will be error-free, secure, or uninterrupted</li>
+                    <li>Warranties regarding AI-generated content accuracy</li>
+                </ul>
+                <p>Your use of the Service is at your sole risk. We do not warrant that the Service will meet your requirements or expectations.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>14. Limitation of Liability</h2>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, AQLIA AND ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR:</p>
+                <ul>
+                    <li>Indirect, incidental, special, consequential, or punitive damages</li>
+                    <li>Loss of profits, revenue, data, or business opportunities</li>
+                    <li>Educational outcomes or academic performance</li>
+                    <li>Service interruptions, data loss, or security breaches</li>
+                    <li>Actions or content of third parties or other users</li>
+                    <li>Damages arising from AI-generated content</li>
+                </ul>
+                <p>Our total liability for any claims arising from or related to the Service shall not exceed the amount you paid us in the 12 months preceding the claim (or $100 if no payments were made).</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>15. Indemnification</h2>
+                <p>You agree to indemnify, defend, and hold harmless Aqlia and its affiliates from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:</p>
+                <ul>
+                    <li>Your use or misuse of the Service</li>
+                    <li>Your violation of these Terms</li>
+                    <li>Your User Content or any intellectual property infringement</li>
+                    <li>Your violation of any third-party rights</li>
+                    <li>Your violation of applicable laws or regulations</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>16. Third-Party Services and Links</h2>
+                <p>The Service may integrate with or link to third-party services, websites, or content. We are not responsible for:</p>
+                <ul>
+                    <li>The availability, accuracy, or content of third-party services</li>
+                    <li>Third-party privacy practices or terms of service</li>
+                    <li>Any damages or losses from third-party services</li>
+                </ul>
+                <p>Your use of third-party services is governed by their respective terms and policies.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>17. Governing Law and Dispute Resolution</h2>
+                <p>These Terms are governed by the laws of India, without regard to conflict of law principles. Any disputes arising from these Terms or the Service shall be resolved through:</p>
+                <ul>
+                    <li><strong>Informal Negotiation:</strong> Contact us first to attempt resolution</li>
+                    <li><strong>Arbitration:</strong> If negotiation fails, disputes shall be resolved through binding arbitration in accordance with Indian arbitration laws</li>
+                    <li><strong>Jurisdiction:</strong> Courts in India shall have exclusive jurisdiction for any matters not subject to arbitration</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>18. Miscellaneous</h2>
+
+                <h3>18.1 Entire Agreement</h3>
+                <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Aqlia regarding the Service.</p>
+
+                <h3>18.2 Severability</h3>
+                <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.</p>
+
+                <h3>18.3 Waiver</h3>
+                <p>Our failure to enforce any provision of these Terms does not constitute a waiver of that provision or our right to enforce it later.</p>
+
+                <h3>18.4 Assignment</h3>
+                <p>You may not assign or transfer these Terms or your account without our written consent. We may assign these Terms to any affiliate or in connection with a merger or acquisition.</p>
+
+                <h3>18.5 Force Majeure</h3>
+                <p>We are not liable for delays or failures in performance resulting from circumstances beyond our reasonable control, including natural disasters, pandemics, or infrastructure failures.</p>
+
+                <h3>18.6 Feedback</h3>
+                <p>We welcome feedback, suggestions, and ideas. By providing feedback, you grant us the right to use it without compensation or attribution.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>19. Updates to Terms</h2>
+                <p>We may update these Terms from time to time. We will notify you of material changes by:</p>
+                <ul>
+                    <li>Posting the updated Terms on our platform</li>
+                    <li>Updating the "Last updated" date</li>
+                    <li>Sending email notifications for significant changes</li>
+                    <li>Requiring acceptance for substantial modifications</li>
+                </ul>
+                <p>Your continued use of the Service after changes take effect constitutes acceptance of the updated Terms. If you do not agree to the changes, you must stop using the Service.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms & Conditions</a>
+                </div>
+                <p>&copy; 2025 Aqlia. Built for coaching institutes.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
