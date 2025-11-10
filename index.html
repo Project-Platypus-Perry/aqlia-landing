@@ -187,51 +187,59 @@
         .hero-video {
             display: block;
             margin-top: 48px;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Mobile Device Frame */
-        .device-frame {
-            position: relative;
-            max-width: 280px;
-            margin: 0 auto;
-            background: #1e293b;
-            border-radius: 36px;
-            padding: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
-                        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-        }
-
-        .device-notch {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 20px;
-            background: #1e293b;
-            border-radius: 0 0 14px 14px;
-            z-index: 2;
-        }
-
-        .device-screen {
-            position: relative;
-            background: #000;
-            border-radius: 26px;
-            overflow: hidden;
-            min-height: 400px;
-            max-height: 500px;
-            height: auto;
-        }
-
-        .device-screen video {
+        .hero-video video {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
+            border-radius: 30px;
+            border: 15px solid #1e293b;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            margin-top: 40px;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator span {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+
+        .scroll-arrow {
+            width: 20px;
+            height: 20px;
+            border-left: 3px solid var(--color-primary);
+            border-bottom: 3px solid var(--color-primary);
+            transform: rotate(-45deg);
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(8px);
+            }
         }
 
         /* Desktop grid layout for hero */
         @media (min-width: 1024px) {
+            .scroll-indicator {
+                display: none;
+            }
+
             .hero-content {
                 display: grid;
                 grid-template-columns: 1.1fr 0.9fr;
@@ -255,15 +263,10 @@
             .hero-video {
                 display: block;
                 margin-top: 0;
-            }
-
-            .device-frame {
-                max-width: 300px;
-            }
-
-            .device-screen {
-                min-height: 450px;
-                max-height: 550px;
+                margin-left: 0;
+                margin-right: 0;
+                max-width: 320px;
+                justify-self: end;
             }
         }
 
@@ -272,13 +275,9 @@
                 gap: 100px;
             }
 
-            .device-frame {
-                max-width: 320px;
-            }
-
-            .device-screen {
-                min-height: 480px;
-                max-height: 580px;
+            .hero-video {
+                max-width: 350px;
+                justify-self: end;
             }
         }
 
@@ -286,27 +285,14 @@
         @media (min-width: 768px) and (max-width: 1023px) {
             .hero-video {
                 display: block;
-            }
-
-            .device-frame {
-                max-width: 280px;
-            }
-
-            .device-screen {
-                min-height: 420px;
-                max-height: 520px;
+                max-width: 300px;
             }
         }
 
         /* Small mobile */
         @media (max-width: 480px) {
-            .device-frame {
-                max-width: 240px;
-            }
-
-            .device-screen {
-                min-height: 360px;
-                max-height: 460px;
+            .hero-video {
+                max-width: 260px;
             }
         }
 
@@ -801,17 +787,16 @@
                             <a href="#waitlist" class="cta-primary">Request Beta Access</a>
                             <a href="#features" class="cta-secondary">Learn More</a>
                         </div>
+                        <div class="scroll-indicator" onclick="document.querySelector('.hero-video').scrollIntoView({ behavior: 'smooth', block: 'center' })">
+                            <span>See App Demo</span>
+                            <div class="scroll-arrow"></div>
+                        </div>
                     </div>
                     <div class="hero-video">
-                        <div class="device-frame">
-                            <div class="device-notch"></div>
-                            <div class="device-screen">
-                                <video autoplay muted loop playsinline>
-                                    <source src="aqlia.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        </div>
+                        <video autoplay muted loop playsinline>
+                            <source src="aqlia.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </div>
