@@ -5,27 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Aqlia is a modern LMS built specifically for coaching institutes. Features AI-powered material management, smart chat, automated quiz creation, and batch management.">
+        content="aqlia is a modern LMS built specifically for coaching institutes. Features AI-powered material management, smart chat, automated quiz creation, and batch management.">
     <meta name="theme-color" content="#2563eb">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Aqlia - Modern LMS for Coaching Institutes">
+    <meta property="og:title" content="aqlia - Modern LMS for Coaching Institutes">
     <meta property="og:description"
         content="Streamline your coaching operations with AI-powered material management, smart chat, and automated quiz creation">
     <meta property="og:url" content="https://aqliaai.com">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Aqlia - Modern LMS for Coaching Institutes">
+    <meta name="twitter:title" content="aqlia - Modern LMS for Coaching Institutes">
     <meta name="twitter:description"
         content="Streamline your coaching operations with AI-powered material management, smart chat, and automated quiz creation">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="alternate icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-    <title>Aqlia - Modern LMS for Coaching Institutes</title>
+    <title>aqlia - Modern LMS for Coaching Institutes</title>
     <style>
         /* Design System Variables */
         :root {
@@ -113,7 +115,7 @@
         }
 
         .logo img {
-            height: 100px;
+            height: 72px;
             width: auto;
             display: block;
         }
@@ -226,9 +228,12 @@
         }
 
         @keyframes bounce {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(8px);
             }
@@ -459,14 +464,12 @@
         .feature-icon {
             width: 64px;
             height: 64px;
-            background: var(--color-bg-secondary);
             border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 24px;
             transition: all var(--transition);
-            border: 1px solid var(--color-border);
         }
 
         .feature-icon svg {
@@ -480,36 +483,16 @@
         }
 
         /* Feature Icon Colors */
-        .feature-card:nth-child(1) .feature-icon {
-            background: rgba(37, 99, 235, 0.08);
-            border-color: rgba(37, 99, 235, 0.2);
-        }
-
         .feature-card:nth-child(1) .feature-icon svg {
             stroke: #2563eb;
-        }
-
-        .feature-card:nth-child(2) .feature-icon {
-            background: rgba(139, 92, 246, 0.08);
-            border-color: rgba(139, 92, 246, 0.2);
         }
 
         .feature-card:nth-child(2) .feature-icon svg {
             stroke: #8b5cf6;
         }
 
-        .feature-card:nth-child(3) .feature-icon {
-            background: rgba(16, 185, 129, 0.08);
-            border-color: rgba(16, 185, 129, 0.2);
-        }
-
         .feature-card:nth-child(3) .feature-icon svg {
             stroke: #10b981;
-        }
-
-        .feature-card:nth-child(4) .feature-icon {
-            background: rgba(245, 158, 11, 0.08);
-            border-color: rgba(245, 158, 11, 0.2);
         }
 
         .feature-card:nth-child(4) .feature-icon svg {
@@ -551,7 +534,7 @@
         .cta-description {
             font-size: clamp(17px, 2.5vw, 19px);
             color: var(--color-text-secondary);
-            margin-bottom: 40px;
+            margin-bottom: 32px;
             font-weight: 400;
             line-height: 1.6;
             max-width: 600px;
@@ -560,41 +543,27 @@
         }
 
         .cta-contact-info {
-            margin-top: 32px;
-        }
-
-        .cta-contact-info-container {
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            max-width: 500px;
-            margin: 0 auto;
-            transition: all var(--transition);
+            margin-top: 30px;
         }
 
         .cta-contact-info p {
-            font-size: 14px;
-            color: var(--color-text-secondary);
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .cta-contact-info p:last-child {
-            font-size: 13px;
-            color: var(--color-text-tertiary);
+            font-size: 19px;
+            color: var(--color-text-primary);
+            margin: 0;
             font-weight: 400;
-            margin-bottom: 0;
         }
 
         .cta-contact-info a {
-            color: var(--color-primary);
+            color: var(--color-text-secondary);
             text-decoration: none;
             transition: all var(--transition);
-            font-weight: 600;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
         }
 
         .cta-contact-info a:hover {
-            color: var(--color-primary-dark);
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
         }
 
         /* Footer */
@@ -661,7 +630,7 @@
             }
 
             .logo img {
-                height: 75px;
+                height: 54px;
             }
 
             .header-beta {
@@ -784,8 +753,8 @@
             <div class="header-content">
                 <a href="#" class="logo">
                     <picture>
-                        <source srcset="aqlia-dark.png" media="(prefers-color-scheme: light)">
-                        <img src="aqlia.png" alt="Aqlia">
+                        <source srcset="assets/aqlia-dark.png" media="(prefers-color-scheme: light)">
+                        <img src="assets/aqlia.png" alt="aqlia">
                     </picture>
                 </a>
                 <span class="header-beta">Beta</span>
@@ -799,14 +768,15 @@
                 <div class="hero-content">
                     <div class="hero-text">
                         <div class="beta-status">Currently in private beta with select coaching institutes</div>
-                        <h1>Modern LMS built for <br>coaching institutes</h1>
+                        <h1>aqlia - Modern LMS built for <br>coaching institutes</h1>
                         <p>Streamline your coaching operations with AI-powered material management, smart chat, and
                             automated quiz creation</p>
                         <div class="hero-cta">
                             <a href="#waitlist" class="cta-primary">Request Beta Access</a>
                             <a href="#features" class="cta-secondary">Learn More</a>
                         </div>
-                        <div class="scroll-indicator" onclick="document.querySelector('.hero-video').scrollIntoView({ behavior: 'smooth', block: 'center' })">
+                        <div class="scroll-indicator"
+                            onclick="document.querySelector('.hero-video').scrollIntoView({ behavior: 'smooth', block: 'center' })">
                             <span>See App Demo</span>
                             <div class="scroll-arrow"></div>
                         </div>
@@ -902,14 +872,10 @@
                 <h2>Ready to transform your coaching institute?</h2>
                 <p class="cta-description">Join our beta program and be among the first to experience the future of
                     coaching education</p>
-                <a href="mailto:contact@aqlia.org?subject=Aqlia Beta Access Request&body=Hi Aqlia Team,%0D%0A%0D%0AI'm interested in joining the beta program for Aqlia.%0D%0A%0D%0AInstitute Name: %0D%0AYour Name: %0D%0APhone: %0D%0A%0D%0AThank you!"
+                <a href="mailto:contact@aqlia.org?subject=aqlia Beta Access Request&body=Hi aqlia Team,%0D%0A%0D%0AI'm interested in joining the beta program for aqlia.%0D%0A%0D%0AInstitute Name: %0D%0AYour Name: %0D%0APhone: %0D%0A%0D%0AThank you!"
                     class="cta-primary">Request Beta Access</a>
                 <div class="cta-contact-info">
-                    <div class="cta-contact-info-container">
-                        <p>Or email us directly at <a href="mailto:contact@aqlia.org">contact@aqlia.org</a>
-                        </p>
-                        <p>We typically respond within 24 hours</p>
-                    </div>
+                    <p>Questions? Email <a href="mailto:contact@aqlia.org">contact@aqlia.org</a></p>
                 </div>
             </div>
         </section>
@@ -922,7 +888,7 @@
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="terms-and-conditions.html">Terms & Conditions</a>
                 </div>
-                <p>&copy; 2025 Aqlia. Built for coaching institutes.</p>
+                <p>&copy; 2025 aqlia. Built for coaching institutes.</p>
             </div>
         </div>
     </footer>

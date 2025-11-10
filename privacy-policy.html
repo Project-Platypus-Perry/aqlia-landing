@@ -4,9 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy Policy for Aqlia - Learn how we collect, use, and protect your data.">
+    <meta name="description" content="Privacy Policy for aqlia - Learn how we collect, use, and protect your data.">
     <meta name="theme-color" content="#2563eb">
-    <title>Privacy Policy - Aqlia</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <title>Privacy Policy - aqlia</title>
     <style>
         /* Design System Variables */
         :root {
@@ -94,9 +101,30 @@
         }
 
         .logo img {
-            height: 100px;
+            height: 72px;
             width: auto;
             display: block;
+        }
+
+        .header-beta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: rgba(37, 99, 235, 0.06);
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-beta::before {
+            content: '●';
+            font-size: 6px;
+            color: var(--color-primary);
         }
 
         /* Legal Content */
@@ -233,7 +261,13 @@
         /* Responsive */
         @media (max-width: 768px) {
             .logo img {
-                height: 75px;
+                height: 54px;
+            }
+
+            .header-beta {
+                padding: 4px 10px;
+                font-size: 10px;
+                gap: 5px;
             }
 
             .legal-content {
@@ -259,10 +293,11 @@
             <div class="header-content">
                 <a href="index.html" class="logo">
                     <picture>
-                        <source srcset="aqlia-dark.png" media="(prefers-color-scheme: light)">
-                        <img src="aqlia.png" alt="Aqlia">
+                        <source srcset="assets/aqlia-dark.png" media="(prefers-color-scheme: light)">
+                        <img src="assets/aqlia.png" alt="aqlia">
                     </picture>
                 </a>
+                <span class="header-beta">Beta</span>
             </div>
         </div>
     </header>
@@ -276,8 +311,8 @@
 
             <div class="legal-section">
                 <h2>1. Introduction</h2>
-                <p>Welcome to Aqlia. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Learning Management System (LMS) platform designed for coaching institutes.</p>
-                <p>By using Aqlia, you agree to the collection and use of information in accordance with this policy.</p>
+                <p>Welcome to aqlia. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Learning Management System (LMS) platform designed for coaching institutes.</p>
+                <p>By using aqlia, you agree to the collection and use of information in accordance with this policy.</p>
             </div>
 
             <div class="legal-section">
@@ -329,7 +364,7 @@
 
             <div class="legal-section">
                 <h2>4. AI-Powered Features and Data Processing</h2>
-                <p>Aqlia uses artificial intelligence to enhance learning experiences:</p>
+                <p>aqlia uses artificial intelligence to enhance learning experiences:</p>
                 <ul>
                     <li><strong>Smart Chat:</strong> Your chat queries and uploaded materials are processed to provide contextual answers. We use this data to improve AI accuracy and relevance.</li>
                     <li><strong>Quiz Generation:</strong> When creating quizzes, our AI may search the web and process your reference materials to generate relevant questions.</li>
@@ -346,7 +381,7 @@
                     <li><strong>Service Providers:</strong> With trusted third-party vendors who assist in operating our platform (e.g., cloud hosting, AI services)</li>
                     <li><strong>Legal Requirements:</strong> When required by law, court order, or government regulation</li>
                     <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
-                    <li><strong>Safety and Security:</strong> To protect the rights, property, and safety of Aqlia, our users, or the public</li>
+                    <li><strong>Safety and Security:</strong> To protect the rights, property, and safety of aqlia, our users, or the public</li>
                 </ul>
             </div>
 
@@ -413,7 +448,7 @@
 
             <div class="legal-section">
                 <h2>11. Beta Program Notice</h2>
-                <p>Aqlia is currently in private beta. During this period:</p>
+                <p>aqlia is currently in private beta. During this period:</p>
                 <ul>
                     <li>Features and functionality may change without notice</li>
                     <li>We may collect additional feedback and usage data to improve the platform</li>
@@ -439,12 +474,12 @@
                     <li>Updating the "Last updated" date</li>
                     <li>Sending email notifications for significant changes</li>
                 </ul>
-                <p>Your continued use of Aqlia after changes become effective constitutes acceptance of the updated policy.</p>
+                <p>Your continued use of aqlia after changes become effective constitutes acceptance of the updated policy.</p>
             </div>
 
             <div class="legal-section">
                 <h2>15. Children's Privacy</h2>
-                <p>Aqlia is designed for use by coaching institutes to provide educational services. While students of various ages may use the platform through their institutes, we do not knowingly collect personal information directly from children under 13 without parental consent through the institute.</p>
+                <p>aqlia is designed for use by coaching institutes to provide educational services. While students of various ages may use the platform through their institutes, we do not knowingly collect personal information directly from children under 13 without parental consent through the institute.</p>
             </div>
 
         </div>
@@ -458,7 +493,7 @@
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="terms-and-conditions.html">Terms & Conditions</a>
                 </div>
-                <p>&copy; 2025 Aqlia. Built for coaching institutes.</p>
+                <p>&copy; 2025 aqlia. Built for coaching institutes.</p>
             </div>
         </div>
     </footer>
