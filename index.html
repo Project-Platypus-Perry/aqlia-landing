@@ -187,7 +187,7 @@
         .hero-video {
             display: block;
             margin-top: 48px;
-            max-width: 300px;
+            max-width: 85%;
             margin-left: auto;
             margin-right: auto;
         }
@@ -197,7 +197,7 @@
             height: auto;
             display: block;
             border-radius: 30px;
-            border: 15px solid #1e293b;
+            border: 8px solid #1e293b;
         }
 
         /* Scroll indicator */
@@ -268,6 +268,10 @@
                 max-width: 320px;
                 justify-self: end;
             }
+
+            .hero-video video {
+                border: 15px solid #1e293b;
+            }
         }
 
         @media (min-width: 1280px) {
@@ -281,18 +285,33 @@
             }
         }
 
+        /* Medium mobile/Small tablet */
+        @media (min-width: 481px) and (max-width: 767px) {
+            .hero-video {
+                max-width: 70%;
+            }
+
+            .hero-video video {
+                border: 10px solid #1e293b;
+            }
+        }
+
         /* Tablet layout */
         @media (min-width: 768px) and (max-width: 1023px) {
             .hero-video {
                 display: block;
-                max-width: 300px;
+                max-width: 500px;
+            }
+
+            .hero-video video {
+                border: 12px solid #1e293b;
             }
         }
 
         /* Small mobile */
         @media (max-width: 480px) {
             .hero-video {
-                max-width: 260px;
+                max-width: 85%;
             }
         }
 
