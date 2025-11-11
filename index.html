@@ -202,6 +202,53 @@
             border: 8px solid #1e293b;
         }
 
+        .video-container {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .video-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            color: #1e293b;
+            z-index: 10;
+        }
+
+        .video-play-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .video-play-button:active {
+            transform: translate(-50%, -50%) scale(0.95);
+        }
+
+        .video-play-button svg {
+            width: 48px;
+            height: 48px;
+            margin-left: 4px;
+        }
+
+        .video-playing .video-play-button {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         /* Scroll indicator */
         .scroll-indicator {
             display: flex;
@@ -543,14 +590,16 @@
         }
 
         .cta-contact-info {
-            margin-top: 30px;
+            margin-top: clamp(20px, 3vw, 30px);
         }
 
         .cta-contact-info p {
-            font-size: 19px;
-            color: var(--color-text-primary);
+            font-size: clamp(17px, 2.5vw, 19px);
+            color: var(--color-text-secondary);
             margin: 0;
             font-weight: 400;
+            line-height: 1.6;
+            word-break: break-word;
         }
 
         .cta-contact-info a {
@@ -559,6 +608,7 @@
             transition: all var(--transition);
             font-weight: 500;
             border-bottom: 1px solid transparent;
+            display: inline-block;
         }
 
         .cta-contact-info a:hover {
@@ -672,6 +722,10 @@
                 padding: 80px 0;
             }
 
+            .cta-contact-info a {
+                padding: 4px 0;
+            }
+
             footer {
                 padding: 40px 0;
             }
@@ -782,10 +836,17 @@
                         </div>
                     </div>
                     <div class="hero-video">
-                        <video autoplay muted loop playsinline>
-                            <source src="aqlia.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <div class="video-container">
+                            <video id="heroVideo" muted loop playsinline>
+                                <source src="aqlia.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <button class="video-play-button" aria-label="Play video">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 12L34 24L16 36V12Z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -907,6 +968,41 @@
                 }
             });
         });
+
+        // Video play/pause functionality
+        const video = document.getElementById('heroVideo');
+        const playButton = document.querySelector('.video-play-button');
+        const videoContainer = document.querySelector('.video-container');
+
+        if (video && playButton && videoContainer) {
+            // Play button click handler
+            playButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                video.play();
+                videoContainer.classList.add('video-playing');
+            });
+
+            // Video container click handler (toggle play/pause)
+            videoContainer.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play();
+                    videoContainer.classList.add('video-playing');
+                } else {
+                    video.pause();
+                    videoContainer.classList.remove('video-playing');
+                }
+            });
+
+            // Show button when video is paused
+            video.addEventListener('pause', function() {
+                videoContainer.classList.remove('video-playing');
+            });
+
+            // Hide button when video is playing
+            video.addEventListener('play', function() {
+                videoContainer.classList.add('video-playing');
+            });
+        }
     </script>
 </body>
 
