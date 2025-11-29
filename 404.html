@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>aqlia - Page Not Found</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <style>
+        /* Design System Variables */
+        :root {
+            --color-primary: #2a2a2a;
+            --color-primary-dark: #1a1a1a;
+            --color-primary-light: #666666;
+
+            --color-text-primary: #2a2a2a;
+            --color-text-secondary: #666666;
+            --color-text-tertiary: #B3B3B3;
+
+            --color-bg-primary: #ffffff;
+            --color-bg-secondary: #FAFAFA;
+
+            --color-border: #D4D4D4;
+
+            --radius-md: 6px;
+            --radius-lg: 6px;
+
+            --shadow-sm: none;
+            --shadow-md: none;
+            --shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+            --transition: 200ms ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background: var(--color-bg-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 48px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container {
+                padding: 0 80px;
+            }
+        }
+
+        /* 404 Content */
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 0;
+        }
+
+        .error-content {
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .error-content h1 {
+            font-size: 120px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 24px;
+            line-height: 1;
+        }
+
+        .error-content h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 16px;
+        }
+
+        .error-content p {
+            font-size: 18px;
+            color: var(--color-text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--color-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            font-size: 16px;
+            font-weight: 500;
+            transition: background var(--transition);
+        }
+
+        .home-button:hover {
+            background: var(--color-primary-dark);
+        }
+
+        @media (max-width: 768px) {
+            .error-content h1 {
+                font-size: 80px;
+            }
+
+            .error-content h2 {
+                font-size: 24px;
+            }
+
+            .error-content p {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <script>
+        (function() {
+            // Route mapping for clean URLs
+            const pathMap = {
+                '/privacy-policy': '/privacy-policy.html',
+                '/terms-and-conditions': '/terms-and-conditions.html',
+                '/': '/index.html'
+            };
+
+            const path = window.location.pathname;
+            const queryString = window.location.search;
+            const hash = window.location.hash;
+
+            // Check if the path matches a clean URL pattern
+            if (pathMap[path]) {
+                // Redirect to the correct .html file while keeping clean URL
+                window.location.replace(pathMap[path] + queryString + hash);
+            } else if (path !== '/404.html') {
+                // For any other invalid path, redirect to home
+                window.location.replace('/' + queryString + hash);
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="error-page">
+        <div class="container">
+            <div class="error-content">
+                <h1>404</h1>
+                <h2>Page Not Found</h2>
+                <p>The page you're looking for doesn't exist or has been moved.</p>
+                <a href="/" class="home-button">Go to Homepage</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

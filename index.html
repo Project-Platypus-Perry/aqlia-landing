@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="aqlia is a modern LMS built specifically for coaching institutes. Features AI-powered material management, smart chat, automated quiz creation, and batch management.">
-    <meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#2a2a2a">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
@@ -27,29 +27,32 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://aqlia.org/">
+
     <title>aqlia - Modern LMS for Coaching Institutes</title>
     <style>
         /* Design System Variables */
         :root {
-            --color-primary: #2563eb;
-            --color-primary-dark: #1d4ed8;
-            --color-primary-light: #3b82f6;
+            --color-primary: #2a2a2a;
+            --color-primary-dark: #1a1a1a;
+            --color-primary-light: #666666;
 
-            --color-text-primary: #1e293b;
-            --color-text-secondary: #64748b;
-            --color-text-tertiary: #94a3b8;
+            --color-text-primary: #2a2a2a;
+            --color-text-secondary: #666666;
+            --color-text-tertiary: #B3B3B3;
 
             --color-bg-primary: #ffffff;
-            --color-bg-secondary: #f8fafc;
+            --color-bg-secondary: #FAFAFA;
 
-            --color-border: #e2e8f0;
+            --color-border: #D4D4D4;
 
-            --radius-md: 12px;
-            --radius-lg: 16px;
+            --radius-md: 6px;
+            --radius-lg: 6px;
 
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-sm: none;
+            --shadow-md: none;
+            --shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.08);
 
             --transition: 200ms ease;
         }
@@ -98,7 +101,6 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
         }
 
         .header-content {
@@ -125,12 +127,12 @@
             align-items: center;
             gap: 6px;
             padding: 4px 12px;
-            background: rgba(37, 99, 235, 0.06);
-            border: 1px solid rgba(37, 99, 235, 0.15);
+            background: #FAFAFA;
+            border: 1px solid var(--color-border);
             border-radius: 100px;
             font-size: 11px;
             font-weight: 600;
-            color: var(--color-primary);
+            color: var(--color-text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -138,7 +140,7 @@
         .header-beta::before {
             content: '●';
             font-size: 6px;
-            color: var(--color-primary);
+            color: var(--color-text-secondary);
         }
 
         /* Hero Section */
@@ -163,15 +165,21 @@
 
         .hero-text h1 {
             font-size: clamp(44px, 7vw, 72px);
-            font-weight: 800;
+            font-weight: 700;
             line-height: 1.15;
             margin-bottom: 24px;
-            letter-spacing: -0.03em;
-            color: var(--color-text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .logo-text {
+            color: var(--color-bg-primary);
+            -webkit-text-stroke: 2px var(--color-primary);
+            text-stroke: 2px var(--color-primary);
+            margin-bottom: 20px !important;
         }
 
         .hero-text p {
-            font-size: clamp(18px, 2.5vw, 21px);
+            font-size: clamp(15px, 2.5vw, 19px);
             color: var(--color-text-secondary);
             margin-bottom: 40px;
             font-weight: 400;
@@ -199,7 +207,7 @@
             height: auto;
             display: block;
             border-radius: 30px;
-            border: 8px solid #1e293b;
+            border: 8px solid var(--color-text-primary);
         }
 
         .video-container {
@@ -224,7 +232,7 @@
             justify-content: center;
             transition: all 0.3s ease;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            color: #1e293b;
+            color: var(--color-text-primary);
             z-index: 10;
         }
 
@@ -269,8 +277,8 @@
         .scroll-arrow {
             width: 20px;
             height: 20px;
-            border-left: 3px solid var(--color-primary);
-            border-bottom: 3px solid var(--color-primary);
+            border-left: 3px solid var(--color-text-secondary);
+            border-bottom: 3px solid var(--color-text-secondary);
             transform: rotate(-45deg);
         }
 
@@ -322,7 +330,7 @@
             }
 
             .hero-video video {
-                border: 15px solid #1e293b;
+                border: 15px solid var(--color-text-primary);
             }
         }
 
@@ -344,7 +352,7 @@
             }
 
             .hero-video video {
-                border: 10px solid #1e293b;
+                border: 10px solid var(--color-text-primary);
             }
         }
 
@@ -356,7 +364,7 @@
             }
 
             .hero-video video {
-                border: 12px solid #1e293b;
+                border: 12px solid var(--color-text-primary);
             }
         }
 
@@ -466,9 +474,9 @@
 
         .section-header h2 {
             font-size: clamp(36px, 6vw, 56px);
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 16px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
             color: var(--color-text-primary);
             line-height: 1.2;
         }
@@ -505,7 +513,8 @@
 
         .feature-card:hover {
             transform: translateY(-2px);
-            border-color: rgba(37, 99, 235, 0.3);
+            border-color: var(--color-text-secondary);
+            background: #F5F5F5;
         }
 
         .feature-icon {
@@ -530,25 +539,13 @@
         }
 
         /* Feature Icon Colors */
-        .feature-card:nth-child(1) .feature-icon svg {
-            stroke: #2563eb;
-        }
-
-        .feature-card:nth-child(2) .feature-icon svg {
-            stroke: #8b5cf6;
-        }
-
-        .feature-card:nth-child(3) .feature-icon svg {
-            stroke: #10b981;
-        }
-
-        .feature-card:nth-child(4) .feature-icon svg {
-            stroke: #f59e0b;
+        .feature-card .feature-icon svg {
+            stroke: var(--color-text-primary);
         }
 
         .feature-card h3 {
             font-size: 20px;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 12px;
             color: var(--color-text-primary);
             line-height: 1.3;
@@ -571,9 +568,9 @@
 
         .cta-section h2 {
             font-size: clamp(36px, 6vw, 48px);
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 20px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
             color: var(--color-text-primary);
             line-height: 1.2;
         }
@@ -612,15 +609,14 @@
         }
 
         .cta-contact-info a:hover {
-            color: var(--color-primary);
-            border-bottom-color: var(--color-primary);
+            color: var(--color-text-primary);
+            border-bottom-color: var(--color-text-primary);
         }
 
         /* Footer */
         footer {
             padding: 48px 0;
             background: var(--color-bg-primary);
-            border-top: 1px solid var(--color-border);
         }
 
         .footer-content {
@@ -646,7 +642,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--color-primary);
+            color: var(--color-text-primary);
         }
 
         footer p {
@@ -821,8 +817,9 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <div class="beta-status">Currently in private beta with select coaching institutes</div>
-                        <h1>aqlia - Modern LMS built for <br>coaching institutes</h1>
+                        <div class="beta-status">Currently in private beta with select institutes</div>
+                        <h1 class="logo-text">aqlia</h1>
+                        <h1>Your AI-powered institute</h1>
                         <p>Streamline your coaching operations with AI-powered material management, smart chat, and
                             automated quiz creation</p>
                         <div class="hero-cta">
@@ -842,8 +839,9 @@
                                 Your browser does not support the video tag.
                             </video>
                             <button class="video-play-button" aria-label="Play video">
-                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 12L34 24L16 36V12Z" fill="currentColor"/>
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 12L34 24L16 36V12Z" fill="currentColor" />
                                 </svg>
                             </button>
                         </div>
@@ -946,10 +944,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-and-conditions.html">Terms & Conditions</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms & Conditions</a>
                 </div>
-                <p>&copy; 2025 aqlia. Built for coaching institutes.</p>
+                <p>&copy; 2025 aqlia</p>
             </div>
         </div>
     </footer>
@@ -976,14 +974,14 @@
 
         if (video && playButton && videoContainer) {
             // Play button click handler
-            playButton.addEventListener('click', function(e) {
+            playButton.addEventListener('click', function (e) {
                 e.stopPropagation();
                 video.play();
                 videoContainer.classList.add('video-playing');
             });
 
             // Video container click handler (toggle play/pause)
-            videoContainer.addEventListener('click', function() {
+            videoContainer.addEventListener('click', function () {
                 if (video.paused) {
                     video.play();
                     videoContainer.classList.add('video-playing');
@@ -994,12 +992,12 @@
             });
 
             // Show button when video is paused
-            video.addEventListener('pause', function() {
+            video.addEventListener('pause', function () {
                 videoContainer.classList.remove('video-playing');
             });
 
             // Hide button when video is playing
-            video.addEventListener('play', function() {
+            video.addEventListener('play', function () {
                 videoContainer.classList.add('video-playing');
             });
         }
