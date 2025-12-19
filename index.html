@@ -294,9 +294,19 @@
             }
         }
 
+        /* Features scroll indicator - only on mobile */
+        .features-scroll {
+            display: flex;
+            margin-top: 30px;
+        }
+
         /* Desktop grid layout for hero */
         @media (min-width: 1024px) {
             .scroll-indicator {
+                display: none;
+            }
+
+            .features-scroll {
                 display: none;
             }
 
@@ -940,16 +950,21 @@
                     </div>
                     <div class="hero-video">
                         <div class="video-container">
-                            <video id="heroVideo" muted loop playsinline>
-                                <source src="aqlia.mp4" type="video/mp4">
+                            <video id="heroVideo" muted loop playsinline autoplay>
+                                <source src="assets/aqlia.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                            <button class="video-play-button" aria-label="Play video">
+                            <!-- <button class="video-play-button" aria-label="Play video">
                                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path d="M16 12L34 24L16 36V12Z" fill="currentColor" />
                                 </svg>
-                            </button>
+                            </button> -->
+                        </div>
+                        <div class="scroll-indicator features-scroll"
+                            onclick="document.querySelector('#features').scrollIntoView({ behavior: 'smooth', block: 'start' })">
+                            <span>See Feature Demos</span>
+                            <div class="scroll-arrow"></div>
                         </div>
                     </div>
                 </div>
