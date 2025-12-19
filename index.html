@@ -586,7 +586,13 @@
             margin-bottom: 20px;
             color: var(--color-text-primary);
             line-height: 1.2;
-            /* text-align: center; */
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-details h3 svg {
+            flex-shrink: 0;
         }
 
         .feature-details p {
@@ -795,7 +801,6 @@
 
             .feature-details h3 {
                 font-size: 26px;
-                text-align: left;
             }
 
             .feature-details p {
@@ -983,13 +988,20 @@
                         <!-- Material Management -->
                         <div class="feature-content active" data-feature-content="material">
                             <div class="feature-details">
-                                <h3>Material Management</h3>
+                                <h3>
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                    </svg>
+                                    <span>Material Management</span>
+                                </h3>
                                 <p>Organize and distribute lectures, notes, and DPPs efficiently. Keep all your learning
                                     materials in one centralized, accessible location.</p>
                             </div>
                             <div class="feature-demo">
                                 <iframe
-                                    src="https://app.supademo.com/embed/cmjcxv58w4p81f6zp31tnzqhe?embed_v=2&utm_source=embed"
+                                    src="https://app.supademo.com/embed/cmjd6hnen00dp4e35jvx46tzo?embed_v=2&utm_source=embed"
                                     title="Material Management" allow="clipboard-write" frameborder="0"
                                     webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen
                                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
@@ -999,7 +1011,16 @@
                         <!-- Batch Management -->
                         <div class="feature-content" data-feature-content="batch">
                             <div class="feature-details">
-                                <h3>Batch & Classroom Management</h3>
+                                <h3>
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    <span>Batch & Classroom Management</span>
+                                </h3>
                                 <p>Create and manage batches and classrooms effortlessly. Organize students, track
                                     attendance, and maintain structured learning environments.</p>
                             </div>
@@ -1015,7 +1036,13 @@
                         <!-- Smart Chat -->
                         <div class="feature-content" data-feature-content="chat">
                             <div class="feature-details">
-                                <h3>Smart Chat</h3>
+                                <h3>
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                    <span>AI Chat</span>
+                                </h3>
                                 <p>AI-powered chat that references your uploaded materials. Students can ask questions
                                     and get instant, contextual answers from notes and books.</p>
                             </div>
@@ -1031,7 +1058,14 @@
                         <!-- AI Quiz Creation -->
                         <div class="feature-content" data-feature-content="quiz">
                             <div class="feature-details">
-                                <h3>AI Quiz Creation</h3>
+                                <h3>
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 11l3 3L22 4"></path>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                    </svg>
+                                    <span>AI Quiz Generation</span>
+                                </h3>
                                 <p>Generate quizzes automatically by providing topics and reference materials. Our AI
                                     searches the web and creates relevant questions instantly.</p>
                             </div>
