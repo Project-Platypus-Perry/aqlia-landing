@@ -39,8 +39,8 @@
             --color-text-secondary: #666666;
             --color-text-tertiary: #B3B3B3;
 
-            --color-bg-primary: #ffffff;
-            --color-bg-secondary: #FAFAFA;
+            --color-bg-primary: #fafafa;
+            --color-bg-secondary: #ffffff;
 
             --color-border: #D4D4D4;
 
@@ -94,7 +94,6 @@
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
@@ -124,7 +123,7 @@
             align-items: center;
             gap: 6px;
             padding: 4px 12px;
-            background: #FAFAFA;
+            background-color: var(--color-bg-secondary);
             border: 1px solid var(--color-border);
             border-radius: 100px;
             font-size: 11px;
@@ -295,7 +294,6 @@
         footer {
             padding: 48px 0;
             background: var(--color-bg-primary);
-            border-top: 1px solid var(--color-border);
         }
 
         .footer-content {
@@ -314,7 +312,7 @@
         }
 
         .footer-links a {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--color-text-secondary);
             text-decoration: none;
             transition: color var(--transition);
@@ -325,7 +323,7 @@
         }
 
         footer p {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--color-text-tertiary);
             font-weight: 400;
         }
@@ -352,6 +350,7 @@
                 gap: 40px;
             }
         }
+
         /* Fire Animation */
         .name-wrapper {
             position: relative;
@@ -383,6 +382,7 @@
                 transform: scale(1);
                 opacity: 0.7;
             }
+
             to {
                 transform: scale(1.25);
                 opacity: 1;

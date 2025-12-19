@@ -40,8 +40,8 @@
             --color-text-secondary: #666666;
             --color-text-tertiary: #B3B3B3;
 
-            --color-bg-primary: #ffffff;
-            --color-bg-secondary: #FAFAFA;
+            --color-bg-primary: #fafafa;
+            --color-bg-secondary: #ffffff;
 
             --color-border: #D4D4D4;
 
@@ -95,7 +95,6 @@
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
@@ -131,6 +130,7 @@
             font-size: 11px;
             font-weight: 600;
             color: var(--color-text-secondary);
+            background-color: var(--color-bg-secondary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -381,7 +381,7 @@
         a.cta-primary:visited {
             background: var(--color-primary);
             color: #ffffff !important;
-            padding: 14px 32px;
+            padding: 10px 20px;
             border-radius: var(--radius-md);
             text-decoration: none !important;
             font-weight: 600;
@@ -411,9 +411,9 @@
         }
 
         .cta-secondary {
-            background: var(--color-bg-primary);
+            background: var(--color-bg-secondary);
             color: var(--color-text-primary);
-            padding: 14px 32px;
+            padding: 10px 20px;
             border-radius: var(--radius-md);
             text-decoration: none;
             font-weight: 600;
@@ -490,72 +490,129 @@
             line-height: 1.6;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+        /* Features Layout */
+        .features-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            align-items: center;
+            width: 100%;
         }
 
-        @media (min-width: 768px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
+        /* Feature Navigation */
+        .feature-nav {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 8px 0;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .feature-nav-item {
+            padding: 10px 20px;
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            transition: all var(--transition);
+            white-space: nowrap;
+        }
+
+        .feature-nav-item:hover {
+            color: var(--color-text-primary);
+            background: var(--color-bg-secondary);
+            border-color: var(--color-text-secondary);
+            transform: translateY(-1px);
+        }
+
+        .feature-nav-item.active {
+            color: #ffffff;
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* Feature Content */
+        .feature-content-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            min-height: 500px;
+        }
+
+        .feature-content {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .feature-content.active {
+            display: grid;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        .feature-card {
-            background: var(--color-bg-primary);
-            padding: 40px;
-            border-radius: var(--radius-lg);
-            transition: all var(--transition);
-            border: 1px solid var(--color-border);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--color-text-secondary);
-            background: #F5F5F5;
-        }
-
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: var(--radius-md);
+        .feature-details {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            margin-bottom: 24px;
-            transition: all var(--transition);
+            max-width: 500px;
         }
 
-        .feature-icon svg {
-            width: 28px;
-            height: 28px;
-            stroke-width: 2;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: translateY(-2px);
-        }
-
-        /* Feature Icon Colors */
-        .feature-card .feature-icon svg {
-            stroke: var(--color-text-primary);
-        }
-
-        .feature-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
+        .feature-details h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
             color: var(--color-text-primary);
-            line-height: 1.3;
+            line-height: 1.2;
+            /* text-align: center; */
         }
 
-        .feature-card p {
+        .feature-details p {
             color: var(--color-text-secondary);
-            font-size: 15px;
-            line-height: 1.6;
+            font-size: 17px;
+            line-height: 1.7;
             font-weight: 400;
+        }
+
+        .feature-demo {
+            position: relative;
+            box-sizing: content-box;
+            max-height: 69vh;
+            max-height: 69svh;
+            width: 100%;
+            aspect-ratio: 0.56;
+            padding: 40px 0;
+        }
+
+        .feature-demo iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* CTA Section */
@@ -635,7 +692,7 @@
         }
 
         .footer-links a {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--color-text-secondary);
             text-decoration: none;
             transition: color var(--transition);
@@ -646,7 +703,7 @@
         }
 
         footer p {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--color-text-tertiary);
             font-weight: 400;
         }
@@ -705,13 +762,52 @@
                 padding: 80px 0;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .features-layout {
+                gap: 32px;
             }
 
-            .feature-card {
-                padding: 32px;
+            .feature-nav {
+                overflow-x: auto;
+                gap: 4px;
+                padding-bottom: 8px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                width: 100%;
+            }
+
+            .feature-nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            .feature-nav-item {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+
+            .feature-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .feature-details {
+                max-width: 100%;
+            }
+
+            .feature-details h3 {
+                font-size: 26px;
+                text-align: left;
+            }
+
+            .feature-details p {
+                font-size: 16px;
+                text-align: left;
+            }
+
+            .feature-demo {
+                max-height: 70vh;
+                max-height: 70svh;
+                padding: 20px 0;
+                width: 100%;
             }
 
             .cta-section {
@@ -736,13 +832,18 @@
                 display: none;
             }
 
-            .feature-card {
-                padding: 28px;
+            .feature-details h3 {
+                font-size: 22px;
             }
 
-            .feature-icon {
-                width: 52px;
-                height: 52px;
+            .feature-details p {
+                font-size: 15px;
+            }
+
+            .feature-demo {
+                padding: 0;
+                max-height: 75vh;
+                max-height: 75svh;
             }
 
             .cta-section {
@@ -857,70 +958,91 @@
                     <p>Powerful tools designed specifically for education institutes</p>
                 </div>
 
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path
-                                    d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                                <path
-                                    d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2Z"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <h3>Material Management</h3>
-                        <p>Organize and distribute lectures, notes, and DPPs efficiently. Keep all your learning
-                            materials in one centralized, accessible location.</p>
-                    </div>
+                <div class="features-layout">
+                    <!-- Feature Navigation -->
+                    <nav class="feature-nav">
+                        <button class="feature-nav-item active" data-feature="material">
+                            Material Management
+                        </button>
+                        <!-- <button class="feature-nav-item" data-feature="batch">
+                            Batch Management
+                        </button> -->
+                        <button class="feature-nav-item" data-feature="chat">
+                            AI Chat
+                        </button>
+                        <button class="feature-nav-item" data-feature="quiz">
+                            AI Quiz Generation
+                        </button>
+                        <button class="feature-nav-item" data-feature="3d-labs">
+                            3D Labs
+                        </button>
+                    </nav>
 
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path
-                                    d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                                <path
-                                    d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                                <path
-                                    d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                                <path
-                                    d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
+                    <!-- Feature Content -->
+                    <div class="feature-content-wrapper">
+                        <!-- Material Management -->
+                        <div class="feature-content active" data-feature-content="material">
+                            <div class="feature-details">
+                                <h3>Material Management</h3>
+                                <p>Organize and distribute lectures, notes, and DPPs efficiently. Keep all your learning
+                                    materials in one centralized, accessible location.</p>
+                            </div>
+                            <div class="feature-demo">
+                                <iframe
+                                    src="https://app.supademo.com/embed/cmjcxv58w4p81f6zp31tnzqhe?embed_v=2&utm_source=embed"
+                                    title="Material Management" allow="clipboard-write" frameborder="0"
+                                    webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                            </div>
                         </div>
-                        <h3>Batch & Classroom Management</h3>
-                        <p>Create and manage batches and classrooms effortlessly. Organize students, track attendance,
-                            and maintain structured learning environments.</p>
-                    </div>
 
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path
-                                    d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
+                        <!-- Batch Management -->
+                        <div class="feature-content" data-feature-content="batch">
+                            <div class="feature-details">
+                                <h3>Batch & Classroom Management</h3>
+                                <p>Create and manage batches and classrooms effortlessly. Organize students, track
+                                    attendance, and maintain structured learning environments.</p>
+                            </div>
+                            <div class="feature-demo">
+                                <iframe
+                                    src="https://app.supademo.com/embed/cmjcxv58w4p81f6zp31tnzqhe?embed_v=2&utm_source=embed"
+                                    title="Batch Management" allow="clipboard-write" frameborder="0"
+                                    webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                            </div>
                         </div>
-                        <h3>Smart Chat</h3>
-                        <p>AI-powered chat that references your uploaded materials. Students can ask questions and get
-                            instant, contextual answers from notes and books.</p>
-                    </div>
 
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path d="M9 11L12 14L22 4" stroke-linecap="round" stroke-linejoin="round" />
-                                <path
-                                    d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
+                        <!-- Smart Chat -->
+                        <div class="feature-content" data-feature-content="chat">
+                            <div class="feature-details">
+                                <h3>Smart Chat</h3>
+                                <p>AI-powered chat that references your uploaded materials. Students can ask questions
+                                    and get instant, contextual answers from notes and books.</p>
+                            </div>
+                            <div class="feature-demo">
+                                <iframe
+                                    src="https://app.supademo.com/embed/cmjcxv58w4p81f6zp31tnzqhe?embed_v=2&utm_source=embed"
+                                    title="Smart Chat" allow="clipboard-write" frameborder="0"
+                                    webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                            </div>
                         </div>
-                        <h3>AI Quiz Creation</h3>
-                        <p>Generate quizzes automatically by providing topics and reference materials. Our AI searches
-                            the web and creates relevant questions instantly.</p>
+
+                        <!-- AI Quiz Creation -->
+                        <div class="feature-content" data-feature-content="quiz">
+                            <div class="feature-details">
+                                <h3>AI Quiz Creation</h3>
+                                <p>Generate quizzes automatically by providing topics and reference materials. Our AI
+                                    searches the web and creates relevant questions instantly.</p>
+                            </div>
+                            <div class="feature-demo">
+                                <iframe
+                                    src="https://app.supademo.com/embed/cmjcxv58w4p81f6zp31tnzqhe?embed_v=2&utm_source=embed"
+                                    title="Quiz Generation" allow="clipboard-write" frameborder="0"
+                                    webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -964,6 +1086,29 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+            });
+        });
+
+        // Feature navigation switching
+        const featureNavItems = document.querySelectorAll('.feature-nav-item');
+        const featureContents = document.querySelectorAll('.feature-content');
+
+        featureNavItems.forEach(navItem => {
+            navItem.addEventListener('click', function () {
+                const targetFeature = this.getAttribute('data-feature');
+
+                // Remove active class from all nav items and content
+                featureNavItems.forEach(item => item.classList.remove('active'));
+                featureContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked nav item
+                this.classList.add('active');
+
+                // Add active class to corresponding content
+                const targetContent = document.querySelector(`[data-feature-content="${targetFeature}"]`);
+                if (targetContent) {
+                    targetContent.classList.add('active');
                 }
             });
         });
