@@ -290,6 +290,79 @@
             fill: currentColor;
         }
 
+        /* Previously At Section */
+        .previously-at {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+
+        .previously-at span {
+            white-space: nowrap;
+        }
+
+        .company-logos {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .company-logo {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+            color: var(--color-text-secondary);
+            transition: opacity 0.2s ease;
+        }
+
+        .company-logo:hover {
+            opacity: 0.7;
+        }
+
+        .company-logo img {
+            height: 16px;
+            width: auto;
+        }
+
+        .company-logo span {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .member-tagline {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .tagline-company {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+            color: var(--color-text-secondary);
+            transition: opacity 0.2s ease;
+            vertical-align: middle;
+        }
+
+        .tagline-company:hover {
+            opacity: 0.7;
+        }
+
+        .tagline-company img {
+            height: 16px;
+            width: auto;
+        }
+
+        .tagline-company span {
+            font-weight: 500;
+        }
+
         /* Footer */
         footer {
             padding: 48px 0;
@@ -450,25 +523,40 @@
                 name: "Aarish Alam",
                 photo: "assets/arish.png",
                 linkedin: "https://www.linkedin.com/in/aarish-alam/",
-                twitter: "https://x.com/AarishAlam11"
+                twitter: "https://x.com/AarishAlam11",
+                previousCompanies: [
+                    { name: "PhonePe", url: "https://www.phonepe.com/", logo: "assets/phonepe.png" },
+                    { name: "FoldMoney", url: "https://fold.money/", logo: "assets/foldmoney.png" }
+                ]
             },
             {
                 name: "Pradyumna Yadav",
                 photo: "assets/prady.png",
                 linkedin: "https://www.linkedin.com/in/pradyumna-yadav/",
-                twitter: "https://x.com/yadavprady25"
+                twitter: "https://x.com/yadavprady25",
+                tagline: "Built AI products for Fortune 500 companies"
             },
             {
                 name: "Gagan Gaurav",
                 photo: "assets/gagan.png",
                 linkedin: "https://www.linkedin.com/in/gagan-gaurav/",
-                twitter: "#"
+                twitter: "#",
+                tagline: "Led infrastructure and deployments for large enterprises",
+                taglineCompanies: [
+                    { name: "FuturePathAI", url: "https://futurepath.ai/", logo: "assets/futurepath.jpg" },
+                    { name: "Rima (YC S22)", url: "https://www.rima.ai/", logo: "assets/rima.jpg" }
+                ]
             },
             {
                 name: "Deepanshu Dhruw",
                 photo: "assets/deep.png",
                 linkedin: "https://www.linkedin.com/in/devblin/",
-                twitter: "https://x.com/devblinx"
+                twitter: "https://x.com/devblinx",
+                previousCompanies: [
+                    { name: "Hopscotch", url: "https://www.hopscotch.in/", logo: "assets/hopscotch.png" },
+                    { name: "Peakflo (YC W22)", url: "https://www.peakflo.co/", logo: "assets/peakflo.png" },
+                    { name: "BuildShip", url: "https://buildship.com/", logo: "assets/buildship.jpg" }
+                ]
             }
         ];
 
@@ -485,6 +573,26 @@
                     <div class="name-wrapper">
                         <h3 class="member-name">${member.name}</h3>
                     </div>
+                    ${member.previousCompanies ? `
+                    <div class="previously-at">
+                        <span>Previously at</span>
+                        <div class="company-logos">
+                            ${member.previousCompanies.map(company => `
+                                <a href="${company.url}" class="company-logo" target="_blank">
+                                    <img src="${company.logo}" alt="${company.name}">
+                                    <span>${company.name}</span>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                    ` : ''}
+                    ${member.tagline ? `
+                    <p class="member-tagline">
+                        ${member.tagline}
+                        ${member.taglineCompany ? `at <a href="${member.taglineCompany.url}" class="tagline-company" target="_blank"><img src="${member.taglineCompany.logo}" alt="${member.taglineCompany.name}"><span>${member.taglineCompany.name}</span></a>` : ''}
+                        ${member.taglineCompanies ? `at ${member.taglineCompanies.map(company => `<a href="${company.url}" class="tagline-company" target="_blank"><img src="${company.logo}" alt="${company.name}"><span>${company.name}</span></a>`).join(', ')}` : ''}
+                    </p>
+                    ` : ''}
                     <div class="social-links">
                         ${member.linkedin ? `
                         <a href="${member.linkedin}" class="social-link" target="_blank" aria-label="LinkedIn">
