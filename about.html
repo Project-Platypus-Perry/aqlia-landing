@@ -139,6 +139,93 @@
             color: var(--color-text-secondary);
         }
 
+        /* Header Navigation */
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--color-text-primary);
+        }
+
+        .nav-link.active {
+            color: var(--color-text-primary);
+        }
+
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-cta {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .cta-primary,
+        a.cta-primary,
+        a.cta-primary:link,
+        a.cta-primary:visited {
+            background: var(--color-primary);
+            color: #ffffff !important;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            text-decoration: none !important;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all var(--transition);
+            border: 2px solid var(--color-primary);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            line-height: 1.5;
+            min-height: 48px;
+        }
+
+        .cta-primary:hover,
+        a.cta-primary:hover {
+            background: var(--color-primary-dark) !important;
+            color: #ffffff !important;
+            border-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 32px;
+            height: 32px;
+            padding: 4px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger-line {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--color-text-primary);
+            transition: all var(--transition);
+        }
+
         /* Page specific styles */
         .page-hero {
             padding: 180px 0 100px;
@@ -407,6 +494,43 @@
                 height: 54px;
             }
 
+            .header-nav {
+                position: fixed;
+                top: 54px;
+                left: 0;
+                right: 0;
+                background: var(--color-bg-primary);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                border-bottom: 1px solid var(--color-border);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+
+            .header-nav.is-open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 16px 24px;
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            .header-nav .header-beta {
+                margin: 16px 24px;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
             .page-hero {
                 padding: 140px 0 60px;
             }
@@ -474,7 +598,22 @@
                         <img src="assets/aqlia.png" alt="aqlia">
                     </picture>
                 </a>
-                <span class="header-beta">Beta</span>
+
+                <nav class="header-nav" id="header-nav">
+                    <a href="/#features" class="nav-link">Product</a>
+                    <a href="/about.html" class="nav-link active">About</a>
+                    <span class="header-beta">Beta</span>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="mailto:contact@aqlia.org?subject=Book a Demo Request&body=Hi aqlia Team,%0D%0A%0D%0AI'd like to book a demo.%0D%0A%0D%0AInstitute Name: %0D%0AYour Name: %0D%0APhone: %0D%0A%0D%0AThank you!"
+                       class="cta-primary header-cta">Book a demo</a>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -482,11 +621,19 @@
     <main>
         <section class="page-hero">
             <div class="container">
-                <h1>We are aqlia</h1>
-                <p>Aqlia builds thoughtful software for educational institutions.</p>
+                <h1>We are Aqlia</h1>
+                <p>Aqlia builds software for JEE institutes that removes operational bottlenecks without compromising academic quality.</p>
             </div>
         </section>
 
+        <section class="vision">
+            <div class="container">
+                <div class="vision-content">
+                    <h2>Why We Built This</h2>
+                    <p>After working closely with coaching institutes, we saw how much faculty time is lost to manual test creation, evaluation, and analysis. Aqlia was built to solve this problem at scale.</p>
+                </div>
+            </div>
+        </section>
 
         <section class="team">
             <div class="container">
@@ -608,6 +755,25 @@
         };
 
         renderTeam();
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const headerNav = document.getElementById('header-nav');
+
+        if (mobileMenuToggle && headerNav) {
+            mobileMenuToggle.addEventListener('click', function() {
+                const isOpen = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isOpen);
+                headerNav.classList.toggle('is-open');
+            });
+
+            headerNav.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    headerNav.classList.remove('is-open');
+                });
+            });
+        }
     </script>
 </body>
 

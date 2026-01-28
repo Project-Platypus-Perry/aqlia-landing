@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Accelerate your institute with AI. Streamline your operations with AI chat, AI quiz generation and material management">
-    <meta name="theme-color" content="#2a2a2a">
+    <meta name="theme-color" content="#0F172A">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
@@ -28,29 +28,38 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://aqlia.org/">
 
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <title>aqlia - Accelerate your institute with AI</title>
     <style>
         /* Design System Variables */
         :root {
-            --color-primary: #2a2a2a;
-            --color-primary-dark: #1a1a1a;
-            --color-primary-light: #666666;
+            --color-primary: #0F172A;
+            --color-primary-dark: #020617;
+            --color-primary-light: #475569;
 
-            --color-text-primary: #2a2a2a;
-            --color-text-secondary: #666666;
-            --color-text-tertiary: #B3B3B3;
+            --color-accent: #6366F1;
+            --color-accent-dark: #4F46E5;
+            --color-accent-light: #818CF8;
 
-            --color-bg-primary: #ffffff;
-            --color-bg-secondary: #ffffff;
+            --color-text-primary: #0F172A;
+            --color-text-secondary: #64748B;
+            --color-text-tertiary: #94A3B8;
 
-            --color-border: #D4D4D4;
+            --color-bg-primary: #FFFFFF;
+            --color-bg-secondary: #F8FAFC;
 
-            --radius-md: 6px;
-            --radius-lg: 6px;
+            --color-border: #E2E8F0;
 
-            --shadow-sm: none;
-            --shadow-md: none;
-            --shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --radius-md: 8px;
+            --radius-lg: 12px;
+
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.06);
 
             --transition: 200ms ease;
         }
@@ -62,7 +71,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
             line-height: 1.6;
             color: var(--color-text-primary);
             background: var(--color-bg-primary);
@@ -72,20 +81,20 @@
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
         @media (min-width: 768px) {
             .container {
-                padding: 0 48px;
+                padding: 0 40px;
             }
         }
 
         @media (min-width: 1280px) {
             .container {
-                padding: 0 80px;
+                padding: 0 48px;
             }
         }
 
@@ -95,8 +104,10 @@
             position: fixed;
             width: 100%;
             top: 0;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
             z-index: 1000;
         }
 
@@ -124,26 +135,87 @@
             align-items: center;
             gap: 6px;
             padding: 4px 12px;
-            background: #ffffff;
+            background: var(--color-bg-secondary);
             border: 1px solid var(--color-border);
             border-radius: 100px;
             font-size: 11px;
             font-weight: 600;
             color: var(--color-text-secondary);
-            background-color: var(--color-bg-secondary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .header-beta::before {
-            content: '●';
-            font-size: 6px;
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+
+        /* Header Navigation */
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-size: 15px;
+            font-weight: 500;
             color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--color-accent);
+        }
+
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-cta {
+            padding: 10px 20px;
+            font-size: 14px;
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        .header-cta:hover {
+            background: var(--color-accent-dark);
+            border-color: var(--color-accent-dark);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 32px;
+            height: 32px;
+            padding: 4px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger-line {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--color-text-primary);
+            transition: all var(--transition);
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -162,11 +234,11 @@
         }
 
         .hero-text h1 {
-            font-size: clamp(44px, 7vw, 72px);
+            font-size: clamp(48px, 8vw, 80px);
             font-weight: 700;
-            line-height: 1.15;
+            line-height: 1.1;
             margin-bottom: 24px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
         }
 
         .logo-text {
@@ -179,11 +251,12 @@
         }
 
         .hero-text p {
-            font-size: clamp(15px, 2.5vw, 19px);
+            font-size: clamp(18px, 2.5vw, 20px);
             color: var(--color-text-secondary);
             margin-bottom: 40px;
             font-weight: 400;
             line-height: 1.6;
+            max-width: 540px;
         }
 
         .hero-cta {
@@ -206,8 +279,9 @@
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 30px;
-            border: 8px solid var(--color-text-primary);
+            border-radius: 24px;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
         }
 
         .video-container {
@@ -257,59 +331,8 @@
             pointer-events: none;
         }
 
-        /* Scroll indicator */
-        .scroll-indicator {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            margin-top: 40px;
-            cursor: pointer;
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator span {
-            font-size: 14px;
-            color: var(--color-text-secondary);
-            font-weight: 500;
-        }
-
-        .scroll-arrow {
-            width: 20px;
-            height: 20px;
-            border-left: 3px solid var(--color-text-secondary);
-            border-bottom: 3px solid var(--color-text-secondary);
-            transform: rotate(-45deg);
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(8px);
-            }
-        }
-
-        /* Features scroll indicator - only on mobile */
-        .features-scroll {
-            display: flex;
-            margin-top: 30px;
-        }
-
         /* Desktop grid layout for hero */
         @media (min-width: 1024px) {
-            .scroll-indicator {
-                display: none;
-            }
-
-            .features-scroll {
-                display: none;
-            }
-
             .hero-content {
                 display: grid;
                 grid-template-columns: 1.1fr 0.9fr;
@@ -340,7 +363,9 @@
             }
 
             .hero-video video {
-                border: 15px solid var(--color-text-primary);
+                border-radius: 24px;
+                border: 1px solid var(--color-border);
+                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
             }
         }
 
@@ -360,10 +385,6 @@
             .hero-video {
                 max-width: 70%;
             }
-
-            .hero-video video {
-                border: 10px solid var(--color-text-primary);
-            }
         }
 
         /* Tablet layout */
@@ -371,10 +392,6 @@
             .hero-video {
                 display: block;
                 max-width: 500px;
-            }
-
-            .hero-video video {
-                border: 12px solid var(--color-text-primary);
             }
         }
 
@@ -385,19 +402,181 @@
             }
         }
 
+        /* Proof Strip */
+        .proof-strip {
+            padding: 56px 0;
+            background: var(--color-bg-primary);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .proof-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+        }
+
+        .proof-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 0 48px;
+        }
+
+        .proof-divider {
+            width: 1px;
+            height: 48px;
+            background: var(--color-border);
+        }
+
+        .proof-stat {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .proof-label {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* Mobile: Stack vertically, hide dividers */
+        @media (max-width: 768px) {
+            .proof-strip {
+                padding: 48px 0;
+            }
+
+            .proof-grid {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .proof-divider {
+                display: none;
+            }
+
+            .proof-item {
+                padding: 0;
+            }
+
+            .proof-stat {
+                font-size: 36px;
+            }
+
+            .proof-label {
+                font-size: 15px;
+            }
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 96px 0;
+            background: var(--color-bg-secondary);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .problem-item {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            gap: 16px;
+            padding: 24px;
+            background: var(--color-bg-primary);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+        }
+
+        .problem-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            color: var(--color-accent);
+        }
+
+        .problem-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .problem-item p {
+            font-size: 16px;
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .problem-section {
+                padding: 64px 0;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-top: 40px;
+            }
+
+            .problem-item {
+                padding: 20px;
+            }
+        }
+
+        /* CTA Features */
+        .cta-features {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px 48px;
+            margin-bottom: 40px;
+            padding: 0;
+        }
+
+        .cta-features li {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cta-features li::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+
         .cta-primary,
         a.cta-primary,
         a.cta-primary:link,
         a.cta-primary:visited {
-            background: var(--color-primary);
+            background: var(--color-accent);
             color: #ffffff !important;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: var(--radius-md);
             text-decoration: none !important;
             font-weight: 600;
             font-size: 16px;
             transition: all var(--transition);
-            border: 2px solid var(--color-primary);
+            border: 2px solid var(--color-accent);
             cursor: pointer;
             display: inline-flex;
             align-items: center;
@@ -409,9 +588,9 @@
 
         .cta-primary:hover,
         a.cta-primary:hover {
-            background: var(--color-primary-dark) !important;
+            background: var(--color-accent-dark) !important;
             color: #ffffff !important;
-            border-color: var(--color-primary-dark);
+            border-color: var(--color-accent-dark);
             transform: translateY(-1px);
         }
 
@@ -421,14 +600,14 @@
         }
 
         .cta-secondary {
-            background: var(--color-bg-secondary);
+            background: var(--color-bg-primary);
             color: var(--color-text-primary);
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: var(--radius-md);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 16px;
-            border: 2px solid var(--color-border);
+            border: 1px solid var(--color-border);
             transition: all var(--transition);
             cursor: pointer;
             display: inline-flex;
@@ -440,9 +619,8 @@
         }
 
         .cta-secondary:hover {
-            background: var(--color-bg-primary);
-            border-color: var(--color-text-primary);
-            color: var(--color-text-primary);
+            border-color: var(--color-accent);
+            color: var(--color-accent);
             transform: translateY(-1px);
         }
 
@@ -466,27 +644,30 @@
         }
 
         .beta-status::before {
-            content: '✨';
-            font-size: 14px;
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--color-accent);
+            border-radius: 50%;
         }
 
         /* Features Section */
         .features {
-            padding: 120px 0;
+            padding: 96px 0;
             background: var(--color-bg-primary);
             position: relative;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 64px;
+            margin-bottom: 48px;
         }
 
         .section-header h2 {
             font-size: clamp(36px, 6vw, 56px);
             font-weight: 700;
             margin-bottom: 16px;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.02em;
             color: var(--color-text-primary);
             line-height: 1.2;
         }
@@ -513,19 +694,20 @@
         .feature-nav {
             display: flex;
             flex-direction: row;
-            gap: 12px;
+            gap: 8px;
             justify-content: center;
             flex-wrap: wrap;
-            padding: 8px 0;
-            width: 100%;
-            max-width: 1200px;
+            padding: 4px;
+            background: var(--color-bg-secondary);
+            border-radius: 12px;
+            width: fit-content;
         }
 
         .feature-nav-item {
-            padding: 10px 20px;
-            background: var(--color-bg-secondary);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
             text-align: center;
             font-family: inherit;
             font-size: 15px;
@@ -538,16 +720,12 @@
 
         .feature-nav-item:hover {
             color: var(--color-text-primary);
-            background: var(--color-bg-secondary);
-            border-color: var(--color-text-secondary);
-            transform: translateY(-1px);
         }
 
         .feature-nav-item.active {
-            color: #ffffff;
-            background: var(--color-primary);
-            border-color: var(--color-primary);
-            font-weight: 600;
+            color: var(--color-text-primary);
+            background: var(--color-bg-primary);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
         }
 
         /* Feature Content */
@@ -591,18 +769,11 @@
         }
 
         .feature-details h3 {
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 28px;
+            font-weight: 600;
             margin-bottom: 20px;
             color: var(--color-text-primary);
-            line-height: 1.2;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .feature-details h3 svg {
-            flex-shrink: 0;
+            line-height: 1.3;
         }
 
         .feature-details p {
@@ -662,17 +833,17 @@
 
         /* CTA Section */
         .cta-section {
-            padding: 120px 0;
+            padding: 96px 0;
             position: relative;
-            background: var(--color-bg-primary);
+            background: var(--color-bg-secondary);
             text-align: center;
         }
 
         .cta-section h2 {
-            font-size: clamp(36px, 6vw, 48px);
+            font-size: clamp(36px, 5vw, 48px);
             font-weight: 700;
             margin-bottom: 20px;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.02em;
             color: var(--color-text-primary);
             line-height: 1.2;
         }
@@ -701,6 +872,12 @@
             word-break: break-word;
         }
 
+        .cta-qualifier {
+            font-size: 14px;
+            color: var(--color-text-tertiary);
+            margin-bottom: 8px;
+        }
+
         .cta-contact-info a {
             color: var(--color-text-secondary);
             text-decoration: none;
@@ -711,14 +888,15 @@
         }
 
         .cta-contact-info a:hover {
-            color: var(--color-text-primary);
-            border-bottom-color: var(--color-text-primary);
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
         }
 
         /* Footer */
         footer {
-            padding: 48px 0;
+            padding: 56px 0;
             background: var(--color-bg-primary);
+            border-top: 1px solid var(--color-border);
         }
 
         .footer-content {
@@ -740,11 +918,12 @@
             font-size: 15px;
             color: var(--color-text-secondary);
             text-decoration: none;
+            font-weight: 500;
             transition: color var(--transition);
         }
 
         .footer-links a:hover {
-            color: var(--color-text-primary);
+            color: var(--color-accent);
         }
 
         footer p {
@@ -760,15 +939,19 @@
             }
 
             .features {
-                padding: 100px 0;
+                padding: 80px 0;
             }
 
             .cta-section {
-                padding: 100px 0;
+                padding: 80px 0;
+            }
+
+            .problem-section {
+                padding: 80px 0;
             }
 
             .section-header {
-                margin-bottom: 56px;
+                margin-bottom: 40px;
             }
         }
 
@@ -787,8 +970,45 @@
                 gap: 5px;
             }
 
+            .header-nav {
+                position: fixed;
+                top: 54px;
+                left: 0;
+                right: 0;
+                background: var(--color-bg-primary);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                border-bottom: 1px solid var(--color-border);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+
+            .header-nav.is-open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 16px 24px;
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            .header-nav .header-beta {
+                margin: 16px 24px;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
             .hero {
-                padding: 120px 0 60px;
+                padding: 120px 0 64px;
             }
 
             .hero-cta {
@@ -804,7 +1024,11 @@
             }
 
             .features {
-                padding: 80px 0;
+                padding: 64px 0;
+            }
+
+            .cta-section {
+                padding: 64px 0;
             }
 
             .features-layout {
@@ -814,10 +1038,11 @@
             .feature-nav {
                 overflow-x: auto;
                 gap: 4px;
-                padding-bottom: 8px;
+                padding: 4px;
                 -webkit-overflow-scrolling: touch;
                 scrollbar-width: none;
                 width: 100%;
+                border-radius: 8px;
             }
 
             .feature-nav::-webkit-scrollbar {
@@ -825,7 +1050,7 @@
             }
 
             .feature-nav-item {
-                padding: 12px 16px;
+                padding: 10px 16px;
                 font-size: 14px;
             }
 
@@ -839,7 +1064,7 @@
             }
 
             .feature-details h3 {
-                font-size: 26px;
+                font-size: 24px;
             }
 
             .feature-details p {
@@ -854,22 +1079,18 @@
                 width: 100%;
             }
 
-            .cta-section {
-                padding: 80px 0;
-            }
-
             .cta-contact-info a {
                 padding: 4px 0;
             }
 
             footer {
-                padding: 40px 0;
+                padding: 48px 0;
             }
         }
 
         @media (max-width: 480px) {
             .hero {
-                padding: 100px 0 50px;
+                padding: 100px 0 48px;
             }
 
             .hero-text h1 br {
@@ -891,7 +1112,7 @@
             }
 
             .cta-section {
-                padding: 70px 0;
+                padding: 48px 0;
             }
         }
 
@@ -900,7 +1121,7 @@
             position: absolute;
             top: -100px;
             left: 0;
-            background: var(--color-primary);
+            background: var(--color-accent);
             color: white;
             padding: 12px 24px;
             text-decoration: none;
@@ -916,26 +1137,26 @@
 
         /* Focus states for accessibility */
         *:focus-visible {
-            outline: 3px solid var(--color-primary);
+            outline: 3px solid var(--color-accent);
             outline-offset: 2px;
         }
 
         .cta-primary:focus-visible,
         .cta-secondary:focus-visible,
         .logo:focus-visible {
-            outline: 3px solid var(--color-primary);
+            outline: 3px solid var(--color-accent);
             outline-offset: 3px;
             border-radius: var(--radius-md);
         }
 
         .feature-card:focus-visible {
-            outline: 3px solid var(--color-primary);
+            outline: 3px solid var(--color-accent);
             outline-offset: 2px;
             border-radius: var(--radius-lg);
         }
 
         a:focus-visible {
-            outline: 3px solid var(--color-primary);
+            outline: 3px solid var(--color-accent);
             outline-offset: 2px;
         }
     </style>
@@ -946,13 +1167,29 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">
+                <a href="/" class="logo">
                     <picture>
                         <source srcset="assets/aqlia-dark.png" media="(prefers-color-scheme: light)">
                         <img src="assets/aqlia.png" alt="aqlia">
                     </picture>
                 </a>
-                <span class="header-beta">Beta</span>
+
+                <nav class="header-nav" id="header-nav">
+                    <a href="https://app.aqlia.org" class="nav-link">Login</a>
+                    <a href="#features" class="nav-link">Product</a>
+                    <a href="/about.html" class="nav-link">About</a>
+                    <span class="header-beta">Beta</span>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="mailto:contact@aqlia.org?subject=Book a Demo Request&body=Hi aqlia Team,%0D%0A%0D%0AI'd like to book a demo.%0D%0A%0D%0AInstitute Name: %0D%0AYour Name: %0D%0APhone: %0D%0A%0D%0AThank you!"
+                       class="cta-primary header-cta">Book a demo</a>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -962,19 +1199,11 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <div class="beta-status">Currently in private beta with select institutes</div>
-                        <h1 class="logo-text">aqlia</h1>
-                        <h1>Accelerate your institute with AI</h1>
-                        <p>Streamline your operations with AI-powered smart chat, automated quiz creation and
-                            material management</p>
+                        <h1>Create JEE-grade tests in minutes, not days.</h1>
+                        <p>Aqlia eliminates manual test creation, evaluation, and analysis for mid-sized JEE institutes — without compromising question quality.</p>
                         <div class="hero-cta">
-                            <a href="#waitlist" class="cta-primary">Request Beta Access</a>
-                            <a href="#features" class="cta-secondary">Learn More</a>
-                        </div>
-                        <div class="scroll-indicator"
-                            onclick="document.querySelector('.hero-video').scrollIntoView({ behavior: 'smooth', block: 'center' })">
-                            <span>See App Demo</span>
-                            <div class="scroll-arrow"></div>
+                            <a href="#waitlist" class="cta-primary">Book a demo</a>
+                            <a href="#features" class="cta-secondary">See how it works</a>
                         </div>
                     </div>
                     <div class="hero-video">
@@ -983,18 +1212,76 @@
                                 <source src="assets/aqlia.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                            <!-- <button class="video-play-button" aria-label="Play video">
-                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 12L34 24L16 36V12Z" fill="currentColor" />
-                                </svg>
-                            </button> -->
                         </div>
-                        <div class="scroll-indicator features-scroll"
-                            onclick="document.querySelector('#features').scrollIntoView({ behavior: 'smooth', block: 'start' })">
-                            <span>See Feature Demos</span>
-                            <div class="scroll-arrow"></div>
-                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="proof-strip">
+            <div class="container">
+                <div class="proof-grid">
+                    <div class="proof-item">
+                        <div class="proof-stat">>95%</div>
+                        <div class="proof-label">JEE-accurate questions</div>
+                    </div>
+                    <div class="proof-divider"></div>
+                    <div class="proof-item">
+                        <div class="proof-stat">50+ hours</div>
+                        <div class="proof-label">Saved per test cycle</div>
+                    </div>
+                    <div class="proof-divider"></div>
+                    <div class="proof-item">
+                        <div class="proof-stat">5,000+</div>
+                        <div class="proof-label">Students assessed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="problem-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>JEE institutes don't struggle with teaching. They struggle with operations.</h2>
+                    <p>Running a JEE institute at scale means managing thousands of students, multiple batches, and constant assessments. Most institutes still rely on manual processes that slow everything down.</p>
+                </div>
+                <div class="problem-grid">
+                    <div class="problem-item">
+                        <span class="problem-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </span>
+                        <p>Faculty spend days creating and validating test papers</p>
+                    </div>
+                    <div class="problem-item">
+                        <span class="problem-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </span>
+                        <p>Question quality varies across batches and teachers</p>
+                    </div>
+                    <div class="problem-item">
+                        <span class="problem-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </span>
+                        <p>Evaluation and analysis take too long to act on</p>
+                    </div>
+                    <div class="problem-item">
+                        <span class="problem-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                <polyline points="17 6 23 6 23 12"></polyline>
+                            </svg>
+                        </span>
+                        <p>Scaling students increases operational chaos</p>
                     </div>
                 </div>
             </div>
@@ -1003,21 +1290,18 @@
         <section id="features" class="features">
             <div class="container">
                 <div class="section-header">
-                    <h2>Everything you need</h2>
-                    <p>Powerful tools designed specifically for education institutes</p>
+                    <h2>Replace the entire JEE assessment workflow.</h2>
+                    <p>From question creation to performance analysis — fully automated.</p>
                 </div>
 
                 <div class="features-layout">
                     <!-- Feature Navigation -->
                     <nav class="feature-nav">
-                        <!-- <button class="feature-nav-item" data-feature="batch">
-                            Batch Management
-                        </button> -->
                         <button class="feature-nav-item active" data-feature="quiz">
                             AI Quiz Generation
                         </button>
                         <button class="feature-nav-item" data-feature="chat">
-                            AI Chat
+                            Doubt Resolution
                         </button>
                         <button class="feature-nav-item" data-feature="3d-labs">
                             3D Labs
@@ -1032,16 +1316,8 @@
                         <!-- Material Management -->
                         <div class="feature-content" data-feature-content="material">
                             <div class="feature-details">
-                                <h3>
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                    </svg>
-                                    <span>Material Management</span>
-                                </h3>
-                                <p>Organize and distribute lectures, notes, and DPPs efficiently. Keep all your learning
-                                    materials in one centralized, accessible location.</p>
+                                <h3>Material Management</h3>
+                                <p>Organize and distribute study material centrally across all batches.</p>
                             </div>
                             <div class="feature-demo">
                                 <iframe
@@ -1055,16 +1331,7 @@
                         <!-- Batch Management -->
                         <div class="feature-content" data-feature-content="batch">
                             <div class="feature-details">
-                                <h3>
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="9" cy="7" r="4"></circle>
-                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                    </svg>
-                                    <span>Batch & Classroom Management</span>
-                                </h3>
+                                <h3>Batch & Classroom Management</h3>
                                 <p>Create and manage batches and classrooms effortlessly. Organize students, track
                                     attendance, and maintain structured learning environments.</p>
                             </div>
@@ -1080,15 +1347,8 @@
                         <!-- Smart Chat -->
                         <div class="feature-content" data-feature-content="chat">
                             <div class="feature-details">
-                                <h3>
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                    </svg>
-                                    <span>AI Chat</span>
-                                </h3>
-                                <p>AI-powered chat that references your uploaded materials. Students can ask questions
-                                    and get instant, contextual answers from notes and books.</p>
+                                <h3>Doubt Resolution</h3>
+                                <p>Students ask doubts and receive clear, step-by-step explanations from course materials.</p>
                             </div>
                             <div class="feature-demo">
                                 <iframe
@@ -1102,16 +1362,8 @@
                         <!-- AI Quiz Creation -->
                         <div class="feature-content active" data-feature-content="quiz">
                             <div class="feature-details">
-                                <h3>
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M9 11l3 3L22 4"></path>
-                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                                    </svg>
-                                    <span>AI Quiz Generation</span>
-                                </h3>
-                                <p>Generate quizzes automatically by providing topics and reference materials. Our AI
-                                    searches the web and creates relevant questions instantly.</p>
+                                <h3>Generate JEE-aligned questions instantly</h3>
+                                <p>Create questions by selecting topic, difficulty, and format. Aqlia references JEE past papers, standard books, and your internal material.</p>
                             </div>
                             <div class="feature-demo">
                                 <iframe
@@ -1125,14 +1377,7 @@
                         <!-- 3D Labs -->
                         <div class="feature-content" data-feature-content="3d-labs">
                             <div class="feature-details">
-                                <h3>
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M9 11l3 3L22 4"></path>
-                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                                    </svg>
-                                    <span>3D Labs</span>
-                                </h3>
+                                <h3>3D Labs</h3>
                                 <p>Turn complex ideas into visual understanding.</p>
                             </div>
                             <div class="feature-demo">
@@ -1150,11 +1395,17 @@
 
         <section id="waitlist" class="cta-section">
             <div class="container">
-                <h2>Ready to transform your institute?</h2>
-                <p class="cta-description">Join our beta program and be among the first to experience the future of
-                    education</p>
-                <a href="mailto:contact@aqlia.org?subject=aqlia Beta Access Request&body=Hi aqlia Team,%0D%0A%0D%0AI'm interested in joining the beta program for aqlia.%0D%0A%0D%0AInstitute Name: %0D%0AYour Name: %0D%0APhone: %0D%0A%0D%0AThank you!"
-                    class="cta-primary">Request Beta Access</a>
+                <h2>Join institutes already using Aqlia</h2>
+                <p class="cta-description">Experience JEE assessment automation designed for institutes managing 1,000–10,000 students.</p>
+
+                <ul class="cta-features">
+                    <li>Designed for JEE syllabus and exam patterns</li>
+                    <li>Accuracy-first approach with verified materials</li>
+                    <li>Built with real JEE institutes</li>
+                </ul>
+
+                <a href="mailto:contact@aqlia.org?subject=Book a Demo Request&body=Hi aqlia Team,%0D%0A%0D%0AI'd like to book a demo.%0D%0A%0D%0AInstitute Name: %0D%0AYour Name: %0D%0APhone: %0D%0A%0D%0AThank you!"
+                    class="cta-primary">Book a demo</a>
                 <div class="cta-contact-info">
                     <p>Questions? Email <a href="mailto:contact@aqlia.org">contact@aqlia.org</a></p>
                 </div>
@@ -1189,6 +1440,25 @@
                 }
             });
         });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const headerNav = document.getElementById('header-nav');
+
+        if (mobileMenuToggle && headerNav) {
+            mobileMenuToggle.addEventListener('click', function() {
+                const isOpen = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isOpen);
+                headerNav.classList.toggle('is-open');
+            });
+
+            headerNav.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    headerNav.classList.remove('is-open');
+                });
+            });
+        }
 
         // Feature navigation switching
         const featureNavItems = document.querySelectorAll('.feature-nav-item');
