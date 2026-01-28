@@ -1213,8 +1213,7 @@
                 </nav>
 
                 <div class="header-actions">
-                    <a href="mailto:contact@aqlia.org?subject=Book a Demo Request&body=Hi aqlia Team,%0D%0A%0D%0AI'd like to book a demo.%0D%0A%0D%0AInstitute Name: %0D%0AYour Name: %0D%0APhone: %0D%0A%0D%0AThank you!"
-                       class="cta-primary header-cta">Book a demo</a>
+                    <a href="#" data-cal-link="aqlia" data-cal-config='{"layout":"month_view"}' class="cta-primary header-cta">Book a demo</a>
                     <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                         <span class="hamburger-line"></span>
                         <span class="hamburger-line"></span>
@@ -1233,7 +1232,7 @@
                         <h1>Create JEE-grade tests in minutes, not days.</h1>
                         <p>Aqlia eliminates manual test creation, evaluation, and analysis for mid-sized JEE institutes — without compromising question quality.</p>
                         <div class="hero-cta">
-                            <a href="#waitlist" class="cta-primary">Book a demo</a>
+                            <a href="#" data-cal-link="aqlia" data-cal-config='{"layout":"month_view"}' class="cta-primary">Book a demo</a>
                             <a href="#features" class="cta-secondary">See how it works</a>
                         </div>
                     </div>
@@ -1435,8 +1434,7 @@
                     <li>Built with real JEE institutes</li>
                 </ul>
 
-                <a href="mailto:contact@aqlia.org?subject=Book a Demo Request&body=Hi aqlia Team,%0D%0A%0D%0AI'd like to book a demo.%0D%0A%0D%0AInstitute Name: %0D%0AYour Name: %0D%0APhone: %0D%0A%0D%0AThank you!"
-                    class="cta-primary">Book a demo</a>
+                <a href="#" data-cal-link="aqlia" data-cal-config='{"layout":"month_view"}' class="cta-primary">Book a demo</a>
                 <div class="cta-contact-info">
                     <p>Questions? Email <a href="mailto:contact@aqlia.org">contact@aqlia.org</a></p>
                 </div>
@@ -1548,6 +1546,13 @@
                 videoContainer.classList.add('video-playing');
             });
         }
+    </script>
+
+    <!-- Cal.com embed script -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", {origin:"https://cal.com"});
+      Cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
     </script>
 </body>
 
