@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Create JEE-grade test papers in minutes with Aqlia. AI-powered quiz generation, automated evaluation, and doubt resolution for coaching institutes managing 1,000-10,000 students.">
-    <meta name="keywords" content="JEE coaching software, AI quiz generation, JEE test paper generator, coaching institute software, AI assessment platform, JEE mock test generator, coaching management software, automated test creation, AI for coaching institutes, JEE question bank">
+    <meta name="description"
+        content="Create JEE-grade test papers in minutes with Aqlia. AI-powered quiz generation, automated evaluation, and doubt resolution for coaching institutes managing 1,000-10,000 students.">
+    <meta name="keywords"
+        content="JEE coaching software, AI quiz generation, JEE test paper generator, coaching institute software, AI assessment platform, JEE mock test generator, coaching management software, automated test creation, AI for coaching institutes, JEE question bank">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Aqlia">
     <meta name="language" content="English">
@@ -16,14 +18,16 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Aqlia - AI Quiz Generation for JEE Coaching Institutes">
-    <meta property="og:description" content="Create JEE-grade test papers in minutes. AI-powered quiz generation, evaluation, and doubt resolution for mid-sized coaching institutes.">
+    <meta property="og:description"
+        content="Create JEE-grade test papers in minutes. AI-powered quiz generation, evaluation, and doubt resolution for mid-sized coaching institutes.">
     <meta property="og:url" content="https://aqlia.org">
     <meta property="og:image" content="https://aqlia.org/assets/aqlia.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Aqlia - AI Quiz Generation for JEE Coaching Institutes">
-    <meta name="twitter:description" content="Create JEE-grade test papers in minutes. AI-powered quiz generation, evaluation, and doubt resolution for mid-sized coaching institutes.">
+    <meta name="twitter:description"
+        content="Create JEE-grade test papers in minutes. AI-powered quiz generation, evaluation, and doubt resolution for mid-sized coaching institutes.">
     <meta name="twitter:image" content="https://aqlia.org/assets/aqlia.png">
 
     <!-- Favicon -->
@@ -45,30 +49,25 @@
     <style>
         /* Design System Variables */
         :root {
-            --color-primary: #0F172A;
-            --color-primary-dark: #020617;
-            --color-primary-light: #475569;
+            --color-primary: #2a2a2a;
+            --color-primary-dark: #1a1a1a;
+            --color-primary-light: #666666;
 
-            --color-accent: #6366F1;
-            --color-accent-dark: #4F46E5;
-            --color-accent-light: #818CF8;
+            --color-text-primary: #2a2a2a;
+            --color-text-secondary: #666666;
+            --color-text-tertiary: #B3B3B3;
 
-            --color-text-primary: #0F172A;
-            --color-text-secondary: #64748B;
-            --color-text-tertiary: #94A3B8;
+            --color-bg-primary: #ffffff;
+            --color-bg-secondary: #ffffff;
 
-            --color-bg-primary: #FFFFFF;
-            --color-bg-secondary: #F8FAFC;
+            --color-border: #D4D4D4;
 
-            --color-border: #E2E8F0;
+            --radius-md: 6px;
+            --radius-lg: 6px;
 
-            --radius-md: 8px;
-            --radius-lg: 12px;
-
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-            --shadow-md: 0 1px 3px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.06);
-
+            --shadow-sm: none;
+            --shadow-md: none;
+            --shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.08);
             --transition: 200ms ease;
         }
 
@@ -133,7 +132,7 @@
         }
 
         .logo img {
-            height: 72px;
+            height: 65px;
             width: auto;
             display: block;
         }
@@ -142,13 +141,13 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 4px 12px;
-            background: var(--color-bg-secondary);
-            border: 1px solid var(--color-border);
+            padding: 6px 14px;
+            background: var(--color-primary);
+            border: none;
             border-radius: 100px;
             font-size: 11px;
             font-weight: 600;
-            color: var(--color-text-secondary);
+            color: var(--color-bg-primary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -157,7 +156,7 @@
             content: '';
             width: 6px;
             height: 6px;
-            background: var(--color-accent);
+            background: var(--color-bg-primary);
             border-radius: 50%;
         }
 
@@ -278,18 +277,25 @@
         .hero-video {
             display: block;
             margin-top: 48px;
-            max-width: 85%;
+            max-width: 320px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .hero-video .video-container {
+            background: var(--color-primary);
+            border-radius: 40px;
+            padding: 12px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
         .hero-video video {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 24px;
-            border: 1px solid var(--color-border);
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+            border-radius: 28px;
+            border: none;
         }
 
         .video-container {
@@ -313,7 +319,6 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             color: var(--color-text-primary);
             z-index: 10;
         }
@@ -321,7 +326,6 @@
         .video-play-button:hover {
             transform: translate(-50%, -50%) scale(1.1);
             background: rgba(255, 255, 255, 1);
-            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
         }
 
         .video-play-button:active {
@@ -369,12 +373,6 @@
                 max-width: 320px;
                 justify-self: end;
             }
-
-            .hero-video video {
-                border-radius: 24px;
-                border: 1px solid var(--color-border);
-                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-            }
         }
 
         @media (min-width: 1280px) {
@@ -391,7 +389,7 @@
         /* Medium mobile/Small tablet */
         @media (min-width: 481px) and (max-width: 767px) {
             .hero-video {
-                max-width: 70%;
+                max-width: 280px;
             }
         }
 
@@ -414,8 +412,6 @@
         .proof-strip {
             padding: 56px 0;
             background: var(--color-bg-primary);
-            border-top: 1px solid var(--color-border);
-            border-bottom: 1px solid var(--color-border);
         }
 
         .proof-grid {
@@ -434,17 +430,24 @@
         }
 
         .proof-divider {
-            width: 1px;
-            height: 48px;
-            background: var(--color-border);
+            display: none;
         }
 
         .proof-stat {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--color-text-primary);
+            font-size: 50px;
+            font-weight: 900;
             line-height: 1.1;
             letter-spacing: -0.02em;
+            background: repeating-linear-gradient(45deg,
+                    var(--color-primary) 0px,
+                    var(--color-primary) 1px,
+                    var(--color-bg-primary) 1px,
+                    var(--color-bg-primary) 2px);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--color-primary);
+            paint-order: stroke fill;
         }
 
         .proof-label {
@@ -556,11 +559,15 @@
         }
 
         .cta-features li {
-            font-size: 16px;
-            color: var(--color-text-secondary);
+            font-size: 14px;
+            color: var(--color-primary);
+            background: var(--color-bg-primary);
+            border: 1px solid var(--color-primary);
+            padding: 10px 18px;
+            border-radius: 50px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .cta-features li::before {
@@ -568,23 +575,24 @@
             display: inline-block;
             width: 6px;
             height: 6px;
-            background: var(--color-accent);
+            background: var(--color-primary);
             border-radius: 50%;
+            flex-shrink: 0;
         }
 
         .cta-primary,
         a.cta-primary,
         a.cta-primary:link,
         a.cta-primary:visited {
-            background: var(--color-accent);
-            color: #ffffff !important;
+            background: var(--color-primary);
+            color: var(--color-bg-primary) !important;
             padding: 12px 24px;
             border-radius: var(--radius-md);
             text-decoration: none !important;
             font-weight: 600;
             font-size: 16px;
             transition: all var(--transition);
-            border: 2px solid var(--color-accent);
+            border: 2px solid var(--color-primary);
             cursor: pointer;
             display: inline-flex;
             align-items: center;
@@ -596,9 +604,9 @@
 
         .cta-primary:hover,
         a.cta-primary:hover {
-            background: var(--color-accent-dark) !important;
-            color: #ffffff !important;
-            border-color: var(--color-accent-dark);
+            background: var(--color-primary-dark) !important;
+            color: var(--color-bg-primary) !important;
+            border-color: var(--color-primary-dark);
             transform: translateY(-1px);
         }
 
@@ -615,7 +623,7 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 16px;
-            border: 1px solid var(--color-border);
+            border: 2px solid var(--color-border);
             transition: all var(--transition);
             cursor: pointer;
             display: inline-flex;
@@ -714,7 +722,7 @@
         .feature-nav-item {
             padding: 12px 24px;
             background: transparent;
-            border: none;
+            border: 1px solid var(--color-border);
             border-radius: 8px;
             text-align: center;
             font-family: inherit;
@@ -731,9 +739,9 @@
         }
 
         .feature-nav-item.active {
-            color: var(--color-text-primary);
-            background: var(--color-bg-primary);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            color: var(--color-bg-primary);
+            background: var(--color-primary);
+            border-color: var(--color-primary);
         }
 
         /* Feature Content */
@@ -856,6 +864,19 @@
             line-height: 1.2;
         }
 
+        .brand-chip {
+            background: repeating-linear-gradient(45deg,
+                    var(--color-primary) 0px,
+                    var(--color-primary) 1px,
+                    var(--color-bg-primary) 1px,
+                    var(--color-bg-primary) 2px);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--color-primary);
+            paint-order: stroke fill;
+        }
+
         .cta-description {
             font-size: clamp(17px, 2.5vw, 19px);
             color: var(--color-text-secondary);
@@ -923,7 +944,7 @@
         }
 
         .footer-links a {
-            font-size: 15px;
+            font-size: 16px;
             color: var(--color-text-secondary);
             text-decoration: none;
             font-weight: 500;
@@ -931,11 +952,11 @@
         }
 
         .footer-links a:hover {
-            color: var(--color-accent);
+            color: var(--color-primary);
         }
 
         footer p {
-            font-size: 15px;
+            font-size: 16px;
             color: var(--color-text-tertiary);
             font-weight: 400;
         }
@@ -980,19 +1001,21 @@
 
             .header-nav {
                 position: fixed;
-                top: 54px;
-                left: 0;
-                right: 0;
+                top: 64px;
+                left: 16px;
+                right: 16px;
                 background: var(--color-bg-primary);
                 flex-direction: column;
                 gap: 0;
-                padding: 0;
-                border-bottom: 1px solid var(--color-border);
-                transform: translateY(-100%);
+                padding: 8px 0;
+                border: 1px solid var(--color-border);
+                border-radius: 12px;
+                transform: translateY(-20px);
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.3s ease;
                 z-index: 999;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             }
 
             .header-nav.is-open {
@@ -1003,12 +1026,11 @@
 
             .nav-link {
                 display: block;
-                padding: 16px 24px;
-                border-bottom: 1px solid var(--color-border);
+                padding: 14px 20px;
             }
 
             .header-nav .header-beta {
-                margin: 16px 24px;
+                margin: 8px 20px 12px;
             }
 
             .mobile-menu-toggle {
@@ -1208,12 +1230,12 @@
                 <nav class="header-nav" id="header-nav">
                     <a href="https://app.aqlia.org" class="nav-link">Login</a>
                     <a href="#features" class="nav-link">Product</a>
-                    <span class="header-beta">Beta</span>
                 </nav>
 
                 <div class="header-actions">
-                    <a href="#" data-cal-link="aqlia" data-cal-config='{"layout":"month_view"}' class="cta-primary header-cta">Book a demo</a>
-                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="header-beta">Beta</span>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu"
+                        aria-expanded="false">
                         <span class="hamburger-line"></span>
                         <span class="hamburger-line"></span>
                         <span class="hamburger-line"></span>
@@ -1229,9 +1251,11 @@
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1>Create JEE-grade tests in minutes, not days.</h1>
-                        <p>Aqlia eliminates manual test creation, evaluation, and analysis for mid-sized JEE institutes — without compromising question quality.</p>
+                        <p>Aqlia eliminates manual test creation, evaluation, and analysis for mid-sized JEE institutes
+                            — without compromising question quality.</p>
                         <div class="hero-cta">
-                            <a href="#" data-cal-link="aqlia" data-cal-config='{"layout":"month_view"}' class="cta-primary">Book a demo</a>
+                            <a href="#" data-cal-link="aqlia" data-cal-config='{"layout":"month_view"}'
+                                class="cta-primary">Book a demo</a>
                             <a href="#features" class="cta-secondary">See how it works</a>
                         </div>
                     </div>
@@ -1272,7 +1296,9 @@
             <div class="container">
                 <div class="section-header">
                     <h2>JEE institutes don't struggle with teaching. They struggle with operations.</h2>
-                    <p>Running a JEE institute at scale means managing thousands of students, multiple batches, and constant assessments. Most institutes still rely on manual processes that slow everything down.</p>
+                    <p>Running a JEE institute at scale means managing thousands of students, multiple batches, and
+                        constant assessments. Most institutes still rely on manual processes that slow everything down.
+                    </p>
                 </div>
                 <div class="problem-grid">
                     <div class="problem-item">
@@ -1377,7 +1403,8 @@
                         <div class="feature-content" data-feature-content="chat">
                             <div class="feature-details">
                                 <h3>Doubt Resolution</h3>
-                                <p>Students ask doubts and receive clear, step-by-step explanations from course materials.</p>
+                                <p>Students ask doubts and receive clear, step-by-step explanations from course
+                                    materials.</p>
                             </div>
                             <div class="feature-demo">
                                 <iframe
@@ -1392,7 +1419,8 @@
                         <div class="feature-content active" data-feature-content="quiz">
                             <div class="feature-details">
                                 <h3>Generate JEE-aligned questions instantly</h3>
-                                <p>Create questions by selecting topic, difficulty, and format. Aqlia references JEE past papers, standard books, and your internal material.</p>
+                                <p>Create questions by selecting topic, difficulty, and format. Aqlia references JEE
+                                    past papers, standard books, and your internal material.</p>
                             </div>
                             <div class="feature-demo">
                                 <iframe
@@ -1424,8 +1452,9 @@
 
         <section id="waitlist" class="cta-section">
             <div class="container">
-                <h2>Join institutes already using Aqlia</h2>
-                <p class="cta-description">Experience JEE assessment automation designed for institutes managing 1,000–10,000 students.</p>
+                <h2>Join institutes already using <span class="brand-chip">aqlia</span></h2>
+                <p class="cta-description">Experience JEE assessment automation designed for institutes managing
+                    1,000–10,000 students.</p>
 
                 <ul class="cta-features">
                     <li>Designed for JEE syllabus and exam patterns</li>
@@ -1433,7 +1462,8 @@
                     <li>Built with real JEE institutes</li>
                 </ul>
 
-                <a href="#" data-cal-link="aqlia" data-cal-config='{"layout":"month_view"}' class="cta-primary">Book a demo</a>
+                <a href="#" data-cal-link="aqlia" data-cal-config='{"layout":"month_view"}' class="cta-primary">Book a
+                    demo</a>
                 <div class="cta-contact-info">
                     <p>Questions? Email <a href="mailto:contact@aqlia.org">contact@aqlia.org</a></p>
                 </div>
@@ -1448,7 +1478,7 @@
                     <a href="/privacy-policy">Privacy Policy</a>
                     <a href="/terms-and-conditions">Terms & Conditions</a>
                 </div>
-                <p>&copy; 2025 aqlia</p>
+                <p>&copy; 2026 aqlia</p>
             </div>
         </div>
     </footer>
@@ -1473,17 +1503,25 @@
         const headerNav = document.getElementById('header-nav');
 
         if (mobileMenuToggle && headerNav) {
-            mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
                 const isOpen = this.getAttribute('aria-expanded') === 'true';
                 this.setAttribute('aria-expanded', !isOpen);
                 headerNav.classList.toggle('is-open');
             });
 
             headerNav.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', function() {
+                link.addEventListener('click', function () {
                     mobileMenuToggle.setAttribute('aria-expanded', 'false');
                     headerNav.classList.remove('is-open');
                 });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!headerNav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    headerNav.classList.remove('is-open');
+                }
             });
         }
 
@@ -1548,9 +1586,9 @@
 
     <!-- Cal.com embed script -->
     <script type="text/javascript">
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", {origin:"https://cal.com"});
-      Cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", { origin: "https://cal.com" });
+        Cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
     </script>
 </body>
 
